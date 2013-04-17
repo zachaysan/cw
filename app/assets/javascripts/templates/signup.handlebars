@@ -1,0 +1,45 @@
+<div class="login">
+  <h1>Welcome, new friend.</h1>
+
+  <div class="frame">
+    <div class="framewrapper">
+
+      <form>
+        <div class="mq-formrow">
+          <div class="mq-formfield" style="width: 240px;">
+            {{view Ember.TextField valueBinding="email" disabledBinding="isProcessing" placeholder="Email Address" class="large"}}
+          </div>
+
+          <div class="mq-formfield" style="width: 240px;">
+            {{view Ember.TextField valueBinding="password" disabledBinding="isProcessing" placeholder="Password" class="large" type="password"}}
+          </div>
+
+          <div class="mq-formfield">
+            <button {{action createAccount}} {{bindAttr loading="isProcessing"}} class="mq-button mq-raised mq-large mq-orange" type="submit">
+              <div class="mq-wrapper">
+                <ul class="loading">
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                </ul>
+                <i>Create Account</i>
+              </div>
+            </button>
+            {{#if errorMessage}}
+              <div class="mq-error mq-top">
+                <div class="mq-wrapper">
+                  {{errorMessage}}
+                </div>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="message">
+    Already have an account? {{#linkTo login}}Sign in now{{/linkTo}}
+  </div>
+</div>

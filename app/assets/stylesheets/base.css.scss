@@ -1,0 +1,28 @@
+@import "compass";
+$experimental-support-for-svg: true;
+
+body {
+  font-family: Helvetica, "Helvetica Neue", Arial, Tahoma, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background: #faf9f4;
+  color: #303030;
+}
+
+a {
+  text-decoration: none;
+  color: #1097d6;
+
+  &:hover {
+    color: #0e6187;
+  }
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.application-content {
+  margin: 50px 0;
+}

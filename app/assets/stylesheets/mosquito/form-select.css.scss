@@ -1,0 +1,78 @@
+/* SELECT */
+/*
+	A select is a button that triggers a dropdown on click, and changes its value based on what is selected.
+*/
+.mq-select {
+	display: block;
+	position: relative;
+	font-family: Arial, Tahoma, sans-serif;
+}
+	.mq-select .mq-button {
+		display: block;
+		width: 100%;
+	}
+		.mq-select .mq-button .mq-wrapper {
+			text-align: left;
+		}
+	.mq-select .mq-value {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: block;
+		padding-right: 5px;
+	}
+		.mq-select .mq-value.mq-placeholder {
+			color: #ababab;
+		}
+		
+.mq-textselect {
+	display: inline-block;
+}
+
+
+/* ICON */
+.mq-select .mq-button .mq-wrapper:after {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: 20;
+	width: 10px;
+	height: 15px;
+	pointer-events: none;
+	float: none;
+}
+	.mq-select .mq-button.mq-small .mq-wrapper:after { 
+		background: url("../images/icons.png") no-repeat -56px -8px;
+		right: 4px;
+		top: 5px;
+	}
+	.mq-select .mq-button.mq-medium .mq-wrapper:after { 
+		background: url("../images/icons.png") no-repeat -77px -8px;
+		right: 6px;
+		top: 8px;
+	}
+	.mq-select .mq-button.mq-large .mq-wrapper:after { 
+		background: url("../images/icons.png") no-repeat -77px -8px;
+		right: 8px;
+		top: 12px;
+	}
+	/* active */
+	.mq-select:active .mq-button .mq-wrapper:after,
+	.mq-select.mq-active .mq-button .mq-wrapper:after {
+		margin-top: 1px;
+	}
+	.mq-select[disabled]:active .mq-button .mq-wrapper:after,
+	.mq-select[disabled].mq-active .mq-button .mq-wrapper:after {
+		margin-top: 0px;
+	}
+
+
+/* popup window */
+.mq-select.mq-active .mq-popupwindow,
+.mq-textselect.mq-active .mq-popupwindow {
+	visibility: visible;
+	opacity: 1;
+}
+
+
+

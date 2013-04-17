@@ -1,0 +1,83 @@
+.mq-error {
+  position: absolute;
+  right: 0px;
+  min-width: 20px;
+  padding: 1px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 20px;
+  font-family: Arial, Helvetica, Tahoma, sans-serif;
+  text-shadow: 0px -1px #a03636;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.25);
+  background: #bb2727;
+  margin-top: -4px;
+  margin-bottom: -18px;
+  z-index: 50;
+  pointer-events: none;
+
+  .mq-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 4px;
+    border-radius: 3px;
+
+    background: #e04848;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UwNDg0OCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYzU3NTciIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #e04848 0%, #ec5757 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e04848), color-stop(100%,#ec5757));
+    background: -webkit-linear-gradient(top,  #e04848 0%,#ec5757 100%);
+    background: -o-linear-gradient(top,  #e04848 0%,#ec5757 100%);
+    background: -ms-linear-gradient(top,  #e04848 0%,#ec5757 100%);
+    background: linear-gradient(to bottom,  #e04848 0%,#ec5757 100%);
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 7px;
+      top: -5px;
+      border-left: solid 5px transparent;
+      border-right: solid 5px transparent;
+      border-bottom: solid 5px #bb2727;
+    }
+
+    &:after {
+      top: -4px;
+      border-bottom-color: #e04848;
+    }
+  }
+
+  /* alternative positioning */
+  &.mq-top {
+    top: 0px;
+    margin-top: -30px;
+
+    .mq-wrapper {
+      &:before,
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 7px;
+        bottom: -5px;
+        top: auto;
+        border-left: solid 5px transparent;
+        border-right: solid 5px transparent;
+        border-top: solid 5px #bb2727;
+        border-bottom: none;
+      }
+
+      &:after {
+        top: auto;
+        bottom: -4px;
+        border-top-color: #ec4e53;
+      }
+    }
+  }
+}

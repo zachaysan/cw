@@ -1,0 +1,2 @@
+gem "rails", ">=3.2"
+gem 'ember-rails', git: 'git://github.com/emberjs/ember-rails.git'

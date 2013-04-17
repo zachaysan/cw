@@ -1,0 +1,80 @@
+.mq-buttongroup {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+  .mq-buttongroup .mq-button,
+  .mq-buttongroup .mq-dropbutton {
+    float: left;
+    border-radius: 0px;
+    padding-left: 0px;
+  }
+    .mq-buttongroup .mq-button .mq-wrapper {
+      border-radius: 0px;
+    }
+    .mq-buttongroup .mq-dropbutton .mq-button {
+      padding-left: 0px;
+    }
+
+  /* first button in chain */
+  .mq-buttongroup > .mq-button:first-child,
+  .mq-buttongroup .mq-dropbutton:first-child .mq-button {
+    padding-left: 1px;
+  }
+    /* small */
+    .mq-buttongroup > .mq-small:first-child,
+    .mq-buttongroup > .mq-small:first-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-small,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-small .mq-wrapper {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    /* medium */
+    .mq-buttongroup > .mq-medium:first-child,
+    .mq-buttongroup > .mq-medium:first-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-medium,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-medium .mq-wrapper {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
+    /* large */
+    .mq-buttongroup > .mq-large:first-child,
+    .mq-buttongroup > .mq-large:first-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-large,
+    .mq-buttongroup > .mq-dropbutton:first-child .mq-large .mq-wrapper {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+  /* last button in chain */
+    /* small */
+    .mq-buttongroup > .mq-small:last-child,
+    .mq-buttongroup > .mq-small:last-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-small,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-small .mq-wrapper,
+    .mq-buttongroup > .mq-small.mq-toggle,
+    .mq-buttongroup > .mq-small.mq-toggle .mq-wrapper {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    /* medium */
+    .mq-buttongroup > .mq-medium:last-child,
+    .mq-buttongroup > .mq-medium:last-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-medium,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-medium .mq-wrapper,
+    .mq-buttongroup > .mq-medium.mq-toggle,
+    .mq-buttongroup > .mq-medium.mq-toggle .mq-wrapper {
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+    /* large */
+    .mq-buttongroup > .mq-large:last-child,
+    .mq-buttongroup > .mq-large:last-child .mq-wrapper,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-large,
+    .mq-buttongroup > .mq-dropbutton:last-child .mq-large .mq-wrapper,
+    .mq-buttongroup > .mq-large.mq-toggle,
+    .mq-buttongroup > .mq-large.mq-toggle .mq-wrapper {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+

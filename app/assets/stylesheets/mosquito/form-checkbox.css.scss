@@ -1,0 +1,33 @@
+.mq-checkbox {
+  width: 19px;
+  height: 19px;
+  margin: -1px 0;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+  background: url("../images/icons.png") no-repeat -16px -31px;
+}
+  /* hover */
+  .mq-checkbox:hover {
+    background: url("../images/icons.png") no-repeat -37px -31px;
+  }
+  /* disabled */
+  .mq-checkbox[disabled],
+  .mq-checkbox[disabled]:hover {
+    opacity: 0.55;
+    background: url("../images/icons.png") no-repeat -16px -31px;
+  }
+
+  /* CHECKED */
+  .mq-checkbox[checked] {
+    background: url("../images/icons.png") no-repeat -58px -31px;
+  }
+    /* hover */
+    .mq-checkbox[checked]:hover {
+      background: url("../images/icons.png") no-repeat -79px -31px;
+    }
+    /* disabled */
+    .mq-checkbox[checked][disabled],
+    .mq-checkbox[checked][disabled]:hover {
+      background: url("../images/icons.png") no-repeat -58px -31px;
+    }
