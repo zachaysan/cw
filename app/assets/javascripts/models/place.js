@@ -1,4 +1,4 @@
-var Place = Ember.Object.extend({
+Cw.Place = Ember.Object.extend({
   name: null,
   image: null,
 
@@ -30,7 +30,7 @@ var Place = Ember.Object.extend({
   }.property('country', 'state')
 });
 
-Place.reopenClass({
+Cw.Place.reopenClass({
   findAll: function() {
     var places = [];
     var Place = Parse.Object.extend("Place");
@@ -41,7 +41,7 @@ Place.reopenClass({
     return query.find({
       success: function(results) {
         for (var i=0; i < results.length; i++) {
-          places.push(App.Place.create({
+          places.push(Cw.Place.create({
             name: results[i].get("name"),
             image: results[i].get("image"),
             country: results[i].get("country"),

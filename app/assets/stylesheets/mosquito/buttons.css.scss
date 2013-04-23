@@ -164,9 +164,9 @@
   background: red;
   margin: 0 -5px;
 }
-  .mq-small .mq-carret { background: url("../images/icons.png") no-repeat -33px -10px; }
-  .mq-medium .mq-carret { background: url("../images/icons.png") no-repeat -33px -10px; }
-  .mq-large .mq-carret { background: url("../images/icons.png") no-repeat -10px -10px; }
+  .mq-small .mq-carret { background: url("/assets/icons.png") no-repeat -33px -10px; }
+  .mq-medium .mq-carret { background: url("/assets/icons.png") no-repeat -33px -10px; }
+  .mq-large .mq-carret { background: url("/assets/icons.png") no-repeat -10px -10px; }
 
 
 /* COLOR */
@@ -1359,15 +1359,15 @@
     float: none;
   }
     .mq-dropbutton.mq-small b { 
-      background: url("../images/icons.png") no-repeat -32px -12px; 
+      background: url("/assets/icons.png") no-repeat -32px -12px; 
       margin-left: 3px;
     }
     .mq-dropbutton.mq-medium b { 
-      background: url("../images/icons.png") no-repeat -33px -13px; 
+      background: url("/assets/icons.png") no-repeat -33px -13px; 
       margin-left: 5px;
     }
     .mq-dropbutton.mq-large b { 
-      background: url("../images/icons.png") no-repeat -10px -14px; 
+      background: url("/assets/icons.png") no-repeat -10px -14px; 
       margin-left: 7px;
     }
 
