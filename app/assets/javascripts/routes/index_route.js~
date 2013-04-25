@@ -1,7 +1,0 @@
-var IndexRoute = Ember.Route.extend({
-  model: function() {
-    return Cw.Place.findAll();
-  }
-});
-
-module.exports = IndexRoute;

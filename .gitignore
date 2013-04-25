@@ -14,5 +14,5 @@
 /log/*.log
 /tmp
 
-
-~
+# Ignore saved files
+*~
