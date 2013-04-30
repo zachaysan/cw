@@ -51,6 +51,8 @@ GEM
     celluloid (0.13.0)
       timers (>= 1.0.0)
     chunky_png (1.2.8)
+    clockwork (0.5.0)
+      tzinfo (~> 0.3.35)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -163,6 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clockwork (~> 0.5.0)
   coffee-rails (~> 3.2.1)
   compass-rails
   ember-rails!
