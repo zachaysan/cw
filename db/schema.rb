@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130501150043) do
+ActiveRecord::Schema.define(:version => 20130501154324) do
 
   create_table "attempts", :force => true do |t|
     t.integer  "webhook_id", :null => false
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20130501150043) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.boolean  "failed",      :null => false
+    t.boolean  "attempt",     :null => false
   end
 
 end
