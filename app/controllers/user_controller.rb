@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # TODO: Auth
 
   def create
     user = User.new
