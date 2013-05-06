@@ -1,71 +1,43 @@
-class ContactsController < ApplicationController
+class UsersController < ApplicationController
 
   def create
-    contact = Contact.new
-    if update_contact(contact)
-      render json: contact, status: :created
+    user = User.new
+    if update_user(user)
+      render json: user, status: :created
     else
-      render json: contact.errors, status: :unprocessable_entity
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 
   def update
-    contact = Contact.find(params[:id])
-    if update_contact(contact)
-      render json: contact, status: :ok
+    user = User.find(params[:id])
+    if update_user(user)
+      render json: user, status: :ok
     else
-      render json: contact.errors, status: :unprocessable_entity
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 
   def destroy
-    contact = Contact.find(params[:id])
-    contact.destroy
+    user = User.find(params[:id])
+    user.destroy
     render json: nil, status: :ok
   end
 
 private
 
   def permitted_params
-    params.require(:contact).permit(:first_name,
-                                    :last_name,
-                                    :email,
-                                    :notes,
-                                    phone_numbers: [:id, :number])
+    params.require(:user).permit(:email,
+                                 :password])
   end
 
-  def update_contact(contact)
-    contact_params = permitted_params
-    phone_numbers_param = contact_params.extract!(:phone_numbers)
-    phone_numbers_param = phone_numbers_param[:phone_numbers]
-    phone_numbers_param ||= []
-
-    # Because updates to the contact and its associations should be atomic,
-    # wrap them in a transaction.
-    Contact.transaction do
-      # Update the contact's own attributes first.
-      contact.attributes = contact_params
-      contact.save!
-
-      # Update the contact's phone numbers, creating/destroying as appropriate.
-      specified_phone_numbers = []
-      phone_numbers_param.each do |phone_number_params|
-        if phone_number_params[:id]
-          pn = contact.phone_numbers.find(phone_number_params[:id])
-          pn.update_attributes(phone_number_params)
-        else
-          pn = contact.phone_numbers.create(phone_number_params)
-        end
-        specified_phone_numbers << pn
-      end
-      contact.phone_numbers.each do |pn|
-        pn.destroy unless specified_phone_numbers.include?(pn)
-      end
+  def update_user(user)
+    user_params = permitted_params
+    User.transaction do
+      user.attributes = user_params
+      user.save!
     end
-
-    # Important! Reload the contact to ensure that changes to its associations
-    # (i.e. phone numbers) will be serialized correctly.
-    contact.reload
+    user.reload
 
     return true
   rescue
