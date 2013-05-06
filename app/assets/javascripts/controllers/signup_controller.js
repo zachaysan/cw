@@ -1,4 +1,4 @@
-Cw.SignupController = Ember.Controller.extend({
+App.SignupController = Ember.Controller.extend({
   needs: "application",
   applicationBinding: "controllers.application",
 

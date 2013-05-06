@@ -1,4 +1,4 @@
-Cw.ResetPasswordView = Ember.View.extend({
+App.ResetPasswordView = Ember.View.extend({
   didInsertElement: function() {
     $('input:first').focus();
   }

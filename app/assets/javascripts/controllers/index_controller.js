@@ -1,1 +1,1 @@
-Cw.IndexController = Ember.ArrayController.extend();
+App.IndexController = Ember.ArrayController.extend();

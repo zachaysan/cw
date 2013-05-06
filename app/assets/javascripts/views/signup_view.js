@@ -1,4 +1,4 @@
-Cw.SignupView = Ember.View.extend({
+App.SignupView = Ember.View.extend({
   didInsertElement: function() {
     $('input:first').focus();
   }

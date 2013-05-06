@@ -1,4 +1,4 @@
-Cw.ResetPasswordController = Ember.Controller.extend({
+App.ResetPasswordController = Ember.Controller.extend({
   email: null,
   errorMessage: null,
   isProcessing: null,

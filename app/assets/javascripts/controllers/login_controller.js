@@ -1,4 +1,4 @@
-Cw.LoginController = Ember.Controller.extend({
+App.LoginController = Ember.Controller.extend({
   needs: "application",
   applicationBinding: "controllers.application",
 

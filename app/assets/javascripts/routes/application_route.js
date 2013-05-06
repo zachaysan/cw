@@ -1,4 +1,4 @@
-Cw.ApplicationRoute = Ember.Route.extend({
+App.ApplicationRoute = Ember.Route.extend({
   setupController: function(controller) {
     // Sets the logged in status
     var user = Parse.User.current();

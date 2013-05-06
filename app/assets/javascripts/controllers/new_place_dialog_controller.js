@@ -1,10 +1,10 @@
-Cw.NewPlaceDialogController = Ember.ObjectController.extend({
+App.NewPlaceDialogController = Ember.ObjectController.extend({
   errorMessage: null,
   isProcessing: false,
 
   init: function() {
     this._super();
-    this.set('content', Cw.Place.create());
+    this.set('content', App.Place.create());
   },
 
   createPlace: function() {
@@ -24,7 +24,7 @@ Cw.NewPlaceDialogController = Ember.ObjectController.extend({
     place.save(null, {
       success: function(place) {
         // TODO
-        that.set('content', Cw.Place.create());
+        that.set('content', App.Place.create());
       },
       error: function(place, error) {
         that.set("errorMessage", error.message);
