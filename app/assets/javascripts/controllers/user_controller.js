@@ -1,4 +1,4 @@
-App.SignupController = Ember.Controller.extend({
+App.UserController = Ember.Controller.extend({
   needs: "application",
   applicationBinding: "controllers.application",
 
@@ -12,11 +12,6 @@ App.SignupController = Ember.Controller.extend({
       "errorMessage": null,
       "isProcessing": "true"
     });
-
-    var user = new Parse.User();
-    user.set("username", this.get("email"));
-    user.set("email", this.get("email"));
-    user.set("password", this.get("password"));
 
     var that = this;
     user.signUp(null, {

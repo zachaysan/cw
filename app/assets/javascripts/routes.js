@@ -1,6 +1,6 @@
 
 App.Router.map(function() {
-  this.route("signup", { path: "/signup" });
+  this.resource("user", { path: "/user" });
   this.route("login", { path: "/login" });
   this.route("resetPassword", { path: "/forgot_password" });
 });
