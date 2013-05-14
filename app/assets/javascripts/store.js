@@ -4,8 +4,6 @@
 
 // Disable data storage for now, so that we can extend it later
 
-//DS.Store.extend({
-//  revision: 11,
-//  adapter: DS.LSAdapter.create()
-//});
-
+DS.Store.extend({
+  revision: 12
+});

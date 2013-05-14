@@ -24,8 +24,8 @@ group :assets do
  gem "therubyracer", :platforms => :ruby
 
  gem "uglifier", ">= 1.0.3"
- gem "handlebars-source", ">= 1.0.0.rc.2"
 end
 
 gem "jquery-rails"
+gem "ember-source", "1.0.0rc3.2"
 gem "ember-rails", git: "git://github.com/emberjs/ember-rails.git"

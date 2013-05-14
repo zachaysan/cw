@@ -69,7 +69,7 @@ GEM
     connection_pool (1.0.0)
     ember-data-source (0.0.5)
       ember-source
-    ember-source (1.0.0.rc3.3)
+    ember-source (1.0.0.rc3.2)
       handlebars-source (>= 1.0.0.rc3, < 1.0.0.rc4)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -168,7 +168,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   compass-rails
   ember-rails!
-  handlebars-source (>= 1.0.0.rc.2)
+  ember-source (= 1.0.0rc3.2)
   jquery-rails
   mysql2 (= 0.3.11)
   rails (= 3.2.13)
