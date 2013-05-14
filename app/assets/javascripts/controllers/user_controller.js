@@ -7,37 +7,22 @@ App.UserController = Ember.Controller.extend({
   errorMessage: null,
   isProcessing: null,
 
-  createAccount: function() {
-    this.setProperties({
-      "errorMessage": null,
-      "isProcessing": "true"
-    });
+  startEditing: function(){
+    console.log("Why am I not being called?");
+    this.transaction = this.get('store').transaction();
+    this.set('content', this.transaction.createRecord(App.User, {}));
+  },
 
-    var that = this;
-    user.signUp(null, {
-      success: function(user) {
-        that.setProperties({
-          "application.currentUser": true,
-          "isProcessing": null
-        });
-        that.transitionToRoute('index');
-      },
-      error: function(user, error) {
-        that.set("isProcessing", null);
-        switch(error.code) {
-          case -1:
-            that.set("errorMessage", "You are missing some information");
-          break;
 
-          case 202:
-            that.set("errorMessage", "That email address is already in use");
-          break;
+  stopEditing: function(){
+    if (this.transaction) {
+      this.transaction.rollback();
+      this.transaction = null;
+    }
+  },
 
-          case 125:
-            that.set("errorMessage", "You need a real email address");
-          break;
-        }
-      }
-    });
+  createUser: function() {
+    this.transaction.commit();
+    this.transaction = null;
   }
 });
