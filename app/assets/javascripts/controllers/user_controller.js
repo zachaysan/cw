@@ -1,4 +1,4 @@
-App.UserController = Ember.Controller.extend({
+App.UserController = Ember.ObjectController.extend({
   needs: "application",
   applicationBinding: "controllers.application",
 
