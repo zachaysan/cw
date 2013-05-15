@@ -10,8 +10,8 @@ App.UserController = Ember.ObjectController.extend({
   },
   
   stopEditing: function(){
-    var contactEditController = this.get('controllers.userEdit');
-    contactEditController.stopEditing();
+    var userEditController = this.get('controllers.userEdit');
+    userEditController.stopEditing();
     this.set('isEditing', false);
   }
 });
