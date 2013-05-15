@@ -1,4 +1,4 @@
-App.UsersNewRoute = Ember.Route.extend({
+App.UserNewRoute = Ember.Route.extend({
   model: function() {
     // the record gets created in the controller
     console.log("woah nelly!!!!");

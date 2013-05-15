@@ -17,4 +17,5 @@ App.UserNewController = Ember.ObjectController.extend({
     this.transaction.commit();
     this.transaction = null;
   }
+
 });
