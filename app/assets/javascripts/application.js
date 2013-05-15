@@ -19,4 +19,4 @@
 //= require_self
 //= require app
 
-//= require_tree .
+//= require_tree ./lib
