@@ -4,6 +4,10 @@
 
 // Disable data storage for now, so that we can extend it later
 
-DS.Store.extend({
+App.Adapter = DS.RESTAdapter.extend({
+  bulkCommit: false
+});
+
+App.Store = DS.Store.extend({
   revision: 12
 });
