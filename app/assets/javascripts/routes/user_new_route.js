@@ -6,6 +6,7 @@ App.UsersNewRoute = Ember.Route.extend({
   },
 
   setupController: function(controller) {
+    console.log("about to setup");
     controller.startEditing();
   },
   

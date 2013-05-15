@@ -7,6 +7,7 @@
 
 //= require ./router
 //= require_tree ./routes
+Ember.LOG_BINDINGS = true;
 
 App = Ember.Application.create({LOG_TRANSITIONS: true});
 
