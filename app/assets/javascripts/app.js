@@ -9,3 +9,5 @@
 //= require_tree ./routes
 
 App = Ember.Application.create({LOG_TRANSITIONS: true});
+
+App.deferReadiness();
