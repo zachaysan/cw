@@ -5,7 +5,7 @@
 //= require_tree ./views
 //= require_tree ./templates
 
-//= require ./routes
+//= require ./router
 //= require_tree ./routes
 
 App = Ember.Application.create({LOG_TRANSITIONS: true});
