@@ -32,6 +32,7 @@ Cw::Application.routes.draw do
   #     resource :seller
   #   end
   resources :webhook
+  resources :user
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments
