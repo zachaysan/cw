@@ -17,6 +17,6 @@
 //= require ember
 //= require ember-data
 //= require_self
-//= require cw
+//= require app
 
 //= require_tree .
