@@ -1,10 +1,11 @@
 class User < ActiveRecord::Base
+  include ActiveModel::ForbiddenAttributesProtection
+  attr_accessor :password
+
   has_and_belongs_to_many :producers
 
-  validates_presence_of :email
   validates_presence_of :password, :on => :create
   validates_presence_of :email
-
   validates_uniqueness_of :email
 
   before_save :encrypt_password
