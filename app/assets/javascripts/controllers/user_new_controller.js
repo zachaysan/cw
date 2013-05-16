@@ -1,6 +1,5 @@
 App.UserNewController = Ember.ObjectController.extend({
   startEditing: function(){
-    console.log("Why am I not being called?");
     this.transaction = this.get('store').transaction();
     this.set('content', this.transaction.createRecord(App.User, {}));
   },
