@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   has_and_belongs_to_many :producers
+  has_one :access_token
 
   validates_presence_of :password, :on => :create
   validates_presence_of :email
