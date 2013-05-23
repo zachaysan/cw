@@ -33,6 +33,7 @@ Cw::Application.routes.draw do
   #   end
   resources :webhook
   resources :users
+  resources :access_tokens
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments
