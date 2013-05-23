@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516195848) do
+ActiveRecord::Schema.define(:version => 20130523192131) do
+
+  create_table "access_token", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "attempts", :force => true do |t|
     t.integer  "webhook_id", :null => false
