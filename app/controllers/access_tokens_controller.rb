@@ -1,4 +1,4 @@
-class AccessTokenController < ApplicationController
+class AccessTokensController < ApplicationController
 
   respond_to :json
 
