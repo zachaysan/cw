@@ -13,7 +13,7 @@ App.ApplicationRoute = Ember.Route.extend({
       if (Parse.User.current()) {
         this.render('newPlaceDialog', {into: 'application', outlet: 'modalOutlet'});
       } else {
-        this.transitionTo('login');
+        this.transitionTo("access_token/new");
       }
     },
 
