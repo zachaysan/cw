@@ -1,4 +1,5 @@
 App.UserNewController = Ember.ObjectController.extend({
+
   startEditing: function(){
     this.transaction = this.get('store').transaction();
     this.set('content', this.transaction.createRecord(App.User, {}));
@@ -12,7 +13,7 @@ App.UserNewController = Ember.ObjectController.extend({
     }
   },
 
-  createUser: function() {
+  createUser: function(){
     this.transaction.commit();
     this.transaction = null;
   }
