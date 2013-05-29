@@ -1,6 +1,3 @@
-<div class="login">
-  <h1>Welcome, new friend.</h1>
-
   <div class="frame">
     <div class="framewrapper">
 
@@ -15,14 +12,14 @@
           </div>
 
           <div class="mq-formfield">
-            <button {{action createAccount}} {{bindAttr loading="isProcessing"}} class="mq-button mq-raised mq-large mq-orange" type="submit">
+            <button {{action createAccessToken}} {{bindAttr loading="isProcessing"}} class="mq-button mq-raised mq-large mq-orange" type="submit">
               <div class="mq-wrapper">
                 <ul class="loading">
                   <li></li>
                   <li></li>
                   <li></li>
                 </ul>
-                <i>Create Account</i>
+                <i>Login</i>
               </div>
             </button>
             {{#if errorMessage}}
@@ -38,8 +35,3 @@
 
     </div>
   </div>
-
-  <div class="message">
-    Already have an account? {{#linkTo login}}Sign in now{{/linkTo}}
-  </div>
-</div>
