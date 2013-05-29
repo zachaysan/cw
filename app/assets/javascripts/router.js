@@ -8,5 +8,5 @@ App.Router.map(function() {
   this.resource("access_token", function(){
     // Need to figure out how to set this to /login
     this.route("new");
-  }
+  });
 });
