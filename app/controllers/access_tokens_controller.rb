@@ -10,7 +10,8 @@ class AccessTokensController < ApplicationController
     else
       access_token = AccessToken.find_by_user_id(user.id) || AccessToken.create(:user => user)
       access_token.update_attribute(:updated_at, Time.now)
-      render json: access_token, status: :created
+      
+      render json: {:access_token => access_token}, status: :created
     end
   end
 
