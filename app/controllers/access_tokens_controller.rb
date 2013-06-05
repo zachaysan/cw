@@ -11,7 +11,10 @@ class AccessTokensController < ApplicationController
       access_token = AccessToken.find_by_user_id(user.id) || AccessToken.create(:user => user)
       access_token.update_attribute(:updated_at, Time.now)
       
-      render json: {:access_token => access_token}, status: :created
+      # For some reason ember data doesn't sideload (or is it overwrite?)
+      # data properly on response to a post so we are going to use
+      # the id as the access token on the JS side
+      render json: {:access_token => {"id"=> access_token.token }}, status: :created
     end
   end
 
