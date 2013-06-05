@@ -3,7 +3,7 @@ class AccessToken < ActiveRecord::Base
 
   validates_presence_of :token
 
-  before_save :generate_token
+  before_create :generate_token
 
   def generate_token
     self.token = SecureRandom.hex
