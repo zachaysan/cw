@@ -7,8 +7,11 @@
 
 //= require ./router
 //= require_tree ./routes
-Ember.LOG_BINDINGS = true;
 
-App = Ember.Application.create({LOG_TRANSITIONS: true});
+var SUPER_DEBUG = false;
+
+Ember.LOG_BINDINGS = SUPER_DEBUG;
+
+App = Ember.Application.create({LOG_TRANSITIONS: SUPER_DEBUG});
 
 App.deferReadiness();
