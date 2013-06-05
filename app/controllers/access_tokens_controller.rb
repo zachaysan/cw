@@ -13,9 +13,17 @@ class AccessTokensController < ApplicationController
       
       # For some reason ember data doesn't sideload (or is it overwrite?)
       # data properly on response to a post so we are going to use
-      # the id as the access token on the JS side
+      # the id as the access token on the JS side. Also, see destroy.
       render json: {:access_token => {"id"=> access_token.token }}, status: :created
     end
+  end
+
+  def destroy
+    # mirros the hack on create
+    token = params[:id]
+    access_token = AccessToken.find_by_token(token)
+    access_token.destroy
+    render json: nil, status: :ok
   end
 
   private
