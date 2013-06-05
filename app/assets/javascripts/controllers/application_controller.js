@@ -1,3 +1,7 @@
 App.ApplicationController = Ember.Controller.extend({
-  currentUser: false // if a current user logged in
+  currentUser: !!localStorage.access_token,
+  
+  logOut: function(){
+    console.log("logout");
+  }
 });
