@@ -17,9 +17,13 @@ App.AccessTokenNewController = Ember.ObjectController.extend({
     this.transaction.commit();
     this.transaction = null;
   },
-
+  
   transitionAfterCreateAccessToken: function() {
-    console.log("time to handle the route change");
+    if (this.get('content.id')) {
+      // Save the access token so we can log in forever
+      localStorage.access_token = this.get('content.id');
+      this.transitionToRoute('user.new');
+    }
   }.observes('content.id')
 
 });
