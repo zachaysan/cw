@@ -3,12 +3,12 @@
 Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 
 ## Pre-Launch Tasks
-- Make user model
-- Move Parse/ember-only account management to ember+rails or just rails if difficult.
+- Fix Producer -> Webhook -> Consumer -> Attempt confusion
+- Define API
+- Make client libraries
+- List latest webhook attempts
+- Show some data on webhook attempts
 - Make attempt model
-- Allow the user model to have many producers
-- Have the producer model have many users
-- Have the producer model have an admin user
 - Set up a packages page with free 60 day trial
 - Set up a webhooks info page with attempt data
 
