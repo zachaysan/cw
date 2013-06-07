@@ -3,7 +3,16 @@
 Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 
 ## Pre-Launch Tasks
-- Fix Producer -> Webhook -> Consumer -> Attempt confusion
+- Make POST /producer/:id/webhook take in:
+  - Resource
+  - Action
+  - Data
+  - Consumer id list
+OR
+- Make POST /producer/:id/consumer/:id/webhook take in:
+  - Resource
+  - Action
+  - Data
 - Define API
 - Make client libraries
 - List latest webhook attempts
