@@ -3,6 +3,7 @@
 Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 
 ## Pre-Launch Tasks
+- Check threat level of CSFR prevention removal on access_token
 - Make POST /producer/:id/webhook take in:
   - Resource
   - Action
