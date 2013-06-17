@@ -3,4 +3,5 @@ class Producer < ActiveRecord::Base
   has_many :webhooks, :through => :consumers
   has_many :consumers
   validates_presence_of :owner_id
+  validates_presence_of :name
 end
