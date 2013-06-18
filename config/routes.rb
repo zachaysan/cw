@@ -31,8 +31,9 @@ Cw::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :webhook
+  resources :webhooks
   resources :users
+  resources :producers
   resources :access_tokens
   # Sample resource route with more complex sub-resources
   #   resources :products do
