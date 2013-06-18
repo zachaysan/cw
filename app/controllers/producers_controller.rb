@@ -3,6 +3,7 @@ class ProducersController < ApplicationController
   respond_to :json
 
   def create
+    authenticate!
     producer = Producer.create(producer_params)
     respond_with(producer, :location => producer)
   end
