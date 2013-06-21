@@ -5,8 +5,19 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate!
-    raise :fuck unless request.headers.include?('HTTP_AUTHORIZATION')
-    auth_token = request.headers['HTTP_AUTHORIZATION']
-    raise :uncomplete
+    unauthorized unless request.headers.include?('HTTP_AUTHORIZATION')
+    token = request.headers['HTTP_AUTHORIZATION']
+    access_token = AccessToken.find_by_token(token)
+    unauthorized unless access_token
+    @current_user = User.find_by_id(access_token.user_id)
+  end
+
+  def current_user
+    return @current_user || authenticate!
+  end
+
+  def unauthorized
+    text = "HTTP_AUTHORIZATION header missing or access_token revoked"
+    render text: text, status: :unauthorized
   end
 end
