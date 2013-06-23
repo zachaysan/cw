@@ -1,11 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  def index
-  end
-
   def authenticate!
-    unauthorized unless request.headers.include?('HTTP_AUTHORIZATION')
+    unless request.headers.include?('HTTP_AUTHORIZATION')
+      return unauthorized
+    end
     token = request.headers['HTTP_AUTHORIZATION']
     access_token = AccessToken.find_by_token(token)
     unauthorized unless access_token
@@ -18,6 +17,6 @@ class ApplicationController < ActionController::Base
 
   def unauthorized
     text = "HTTP_AUTHORIZATION header missing or access_token revoked"
-    render text: text, status: :unauthorized
+    render text: text, status: :unauthorized and return
   end
 end

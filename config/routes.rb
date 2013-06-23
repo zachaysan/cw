@@ -31,10 +31,10 @@ Cw::Application.routes.draw do
   #     resources :comments, :sales
   #     resource :seller
   #   end
-  resources :webhooks
-  resources :users
-  resources :producers
-  resources :access_tokens
+  resources :webhooks, defaults: { format: :json }
+  resources :users, defaults: { format: :json }
+  resources :producers, defaults: { format: :json }
+  resources :access_tokens, defaults: { format: :json }
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments
