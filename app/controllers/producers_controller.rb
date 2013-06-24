@@ -11,6 +11,14 @@ class ProducersController < ApplicationController
     respond_with(producer, status: :created, location: producer)
   end
 
+  def destroy
+    stuff = {producer: :destroyed}
+    producer = Producer.find(params[:id])
+    puts producer
+    producer.destroy
+    render json: stuff, status: :ok
+  end
+
   private
 
   def producer_params
