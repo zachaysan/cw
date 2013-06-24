@@ -4,4 +4,8 @@ class Producer < ActiveRecord::Base
   has_many :consumers
   validates_presence_of :owner_id
   validates_presence_of :name
+
+  def find_by_user
+    raise "NOT IMPLEMENTED"
+  end
 end

@@ -1,6 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  def correct_user(email)
+    return email == current_user.email
+  end
+
   def authenticate!
     unless request.headers.include?('HTTP_AUTHORIZATION')
       return unauthorized
@@ -16,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def unauthorized
-    text = "HTTP_AUTHORIZATION header missing or access_token revoked"
+    text = "HTTP_AUTHORIZATION header missing or access_token revoked or requesting incorrect user"
     render text: text, status: :unauthorized and return
   end
 end
