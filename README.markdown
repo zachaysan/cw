@@ -27,6 +27,7 @@ OR
 - Allow a user to have many consumers
 - Expose the multi-user abilities through the front end
 - Set up a consumer info page with rolled up info data
+- Add indexes to common preformance concerns (esp. on has_and_belongs_to_many)
 
 ## Delayed until traction
 - Set up a stripe account for payments -> Will use 30 day free model.
