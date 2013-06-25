@@ -5,10 +5,10 @@ class ConsumersController < ApplicationController
   respond_to :json
 
   def index
-    raise "NOT IMPLEMENTED"
-    email = params[:email]
-    return unauthorized unless correct_user(email)
-    consumers = current_user.consumers
+    producer_id = params[:producer_id]
+    producer = Producer.find(producer_id)
+    return unauthorized unless owns(producer)
+    consumers = producer.consumers
     respond_with(consumers, status: :ok, location: consumers_path)
   end
   
@@ -16,8 +16,7 @@ class ConsumersController < ApplicationController
     consumer = consumer_params
     producer_id = consumer[:producer_id]
     producer = Producer.find(producer_id)
-    owns_producer = producer.users.include?(current_user)
-    return unauthorized unless owns_producer
+    return unauthorized unless owns(producer)
     consumer = Consumer.create(consumer)
     respond_with(consumer, status: :created, location: consumer)
   end
@@ -27,6 +26,12 @@ class ConsumersController < ApplicationController
     consumer = Consumer.find(params[:id])
     consumer.destroy
     render json: stuff, status: :ok
+  end
+
+  protected
+
+  def owns(producer)
+    producer.users.include?(current_user)
   end
 
   private
