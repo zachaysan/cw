@@ -5,7 +5,11 @@ class Producer < ActiveRecord::Base
   validates_presence_of :owner_id
   validates_presence_of :name
 
-  def find_by_user
-    raise "NOT IMPLEMENTED"
+  before_create :make_admin_user
+
+  def make_admin_user
+    user = User.find( self.owner_id )
+    self.users << user
   end
+
 end

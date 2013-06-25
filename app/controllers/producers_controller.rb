@@ -7,8 +7,8 @@ class ProducersController < ApplicationController
   def index
     email = params[:email]
     return unauthorized unless correct_user(email)
-    producers = Producer.find_by_user(current_user.id)
-    respond_with(producers, status: :ok)
+    producers = current_user.producers
+    respond_with(producers, status: :ok, location: producers_path)
   end
 
   
