@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618205734) do
+ActiveRecord::Schema.define(:version => 20130626003410) do
 
   create_table "access_tokens", :force => true do |t|
     t.integer  "user_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130618205734) do
     t.datetime "updated_at",  :null => false
     t.boolean  "failed",      :null => false
     t.boolean  "attempt",     :null => false
+    t.string   "post_uri",    :null => false
   end
 
 end
