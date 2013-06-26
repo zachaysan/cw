@@ -7,7 +7,15 @@ class WebhookController < ApplicationController
   end
   
   def create
-    @webhook = Webhook.new(params[:webhook])
+    @webhook = Webhook.new(webhook_params)
+  end
+
+  private
+
+  def webhook_params
+    params.require(:webhook).premit(:consumer_id,
+                                    :post_uri,
+                                    :data)
   end
 
 end
