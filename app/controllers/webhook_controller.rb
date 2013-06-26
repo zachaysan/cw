@@ -1,4 +1,4 @@
-class WebhookController < ApplicationController
+class WebhooksController < ApplicationController
   respond_to :json
 
   def index
