@@ -7,6 +7,7 @@ class Webhook < ActiveRecord::Base
   scope :attempt, where(attempt: true)
 
   validates_presence_of :data
+  validates_presence_of :post_uri
   validate :attempt_only_if_not_failed
 
   private
