@@ -36,6 +36,7 @@ Cw::Application.routes.draw do
   resources :producers, defaults: { format: :json }
   resources :consumers, defaults: { format: :json }
   resources :access_tokens, defaults: { format: :json }
+  resources :echos, defaults: { format: :json }
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments

@@ -5,6 +5,7 @@ source 'http://rubygems.org'
 gem "rails", "3.2.13"
 gem "mysql2", "0.3.11"
 gem "strong_parameters"
+gem "httparty", "~> 0.11"
 
 # I don't really like devise
 gem "bcrypt-ruby", :require => "bcrypt"

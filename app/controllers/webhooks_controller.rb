@@ -1,4 +1,7 @@
 class WebhooksController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+  before_filter :authenticate!
+
   respond_to :json
 
   def index
@@ -7,13 +10,15 @@ class WebhooksController < ApplicationController
   end
   
   def create
-    @webhook = Webhook.new(webhook_params)
+    webhook = Webhook.create(webhook_params)
+    WebhookWorker.perform_async webhook.id
+    respond_with(webhook, status: :created, location: webhook)
   end
 
   private
 
   def webhook_params
-    params.require(:webhook).premit(:consumer_id,
+    params.require(:webhook).permit(:consumer_id,
                                     :post_uri,
                                     :data)
   end
