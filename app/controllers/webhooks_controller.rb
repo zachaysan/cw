@@ -8,6 +8,11 @@ class WebhooksController < ApplicationController
     WebhookWorker.perform_async('Zach', 5)
     respond_with({index: true})
   end
+
+  def show
+    webhook = Webhook.find(params[:id])
+    respond_with(webhook, status: :ok, location: webhook)
+  end
   
   def create
     webhook = Webhook.create(webhook_params)
