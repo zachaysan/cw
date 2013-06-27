@@ -32,6 +32,12 @@ OR
 ## Delayed until traction
 - Set up a stripe account for payments -> Will use 30 day free model.
 
+## To Start
+```
+redis-server &
+bundle exec sidekiq &
+rails s
+```
 
 ## Webhook - Consumer - Producer explanation
 
