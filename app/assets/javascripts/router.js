@@ -1,4 +1,5 @@
 App.Router.map(function() {
+  this.resource("producers", function(){});
   this.resource("user", function(){
     this.route("new");
     // Not sure if I should put the access token
