@@ -5,8 +5,12 @@ class ProducersController < ApplicationController
   respond_to :json
 
   def index
-    email = params[:email]
-    return unauthorized unless correct_user(email)
+    email = params[:email] || current_user.email
+    
+    # Eventually we may want some users to have full
+    # permissions on other users. For now we just 
+    # check to see if a user is the allowed user
+    return unauthorized unless allowed_user(email)
     producers = current_user.producers
     respond_with(producers, status: :ok, location: producers_path)
   end
