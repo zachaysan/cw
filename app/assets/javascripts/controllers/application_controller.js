@@ -25,5 +25,12 @@ App.ApplicationController = Ember.Controller.extend({
     // without a reload, so we reload here. See also
     // access_token_new_controller
     location.reload();
+  },
+
+  resetHeaders: function(){
+    console.log('resetting headers');
+    Ember.$.ajaxSetup({
+      headers: { 'AUTHORIZATION': localStorage.access_token }
+    });
   }
 });
