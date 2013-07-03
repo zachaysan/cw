@@ -12,7 +12,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 
 # sidekiq is awesome
 gem "sidekiq", "2.11.1"
-gem "slim"
+gem "slim", ">= 1.3.0"
 gem "sinatra", ">= 1.3.0", :require => nil
 gem "clockwork", "~> 0.5.0"
 
