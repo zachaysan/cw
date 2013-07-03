@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  def correct_user(email)
+  def allowed_user(email)
     return email == current_user.email
   end
 
