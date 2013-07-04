@@ -1,5 +1,7 @@
 App.ProducersRoute = Ember.Route.extend({
+  setupController: function(controller, model){},
+
   model: function(){
-    App.Producer.find();
+    return App.Producer.find();
   }
 });

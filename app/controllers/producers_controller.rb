@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
-  skip_before_filter :verify_authenticity_token
-  before_filter :authenticate!
+  skip_before_filter :verify_authenticity_token, except: :show
+  before_filter :authenticate!, except: :show
 
   respond_to :json
 
@@ -12,9 +12,19 @@ class ProducersController < ApplicationController
     # check to see if a user is the allowed user
     return unauthorized unless allowed_user(email)
     producers = current_user.producers
-    respond_with(producers, status: :ok, location: producers_path)
+    producers_list = []
+
+    producers.each do |producer|
+      producers_list.append(producer.to_json)
+    end
+
+    render json: {:producers => producers_list}, status: :ok, location: producers_path
   end
 
+  def show
+    producer = Producer.find(params[:id])
+    respond_with(producer, status: :ok, location: producer)
+  end
   
   def create
     producer = producer_params
