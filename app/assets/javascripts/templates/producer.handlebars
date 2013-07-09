@@ -16,6 +16,13 @@ Producer <br>
   <th><a class="btn btn-danger" {{action destroyRecord}}>delete</a></th>
   </tr>
   </table>
+{{#if consumers.length}}
+  {{#each consumer in consumers}}
+    consumer.name
+  {{/each}}
 {{else}}
-wtflol
+  You have no consumers
+{{/if}}
+{{else}}
+Something went wrong.
 {{/if}}
