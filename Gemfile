@@ -32,5 +32,6 @@ group :assets do
 end
 
 gem "jquery-rails"
-gem "ember-source", "1.0.0rc3.2"
-gem "ember-rails", git: "git://github.com/emberjs/ember-rails.git"
+gem 'handlebars-source', '~> 1.0.12'
+gem "ember-rails"
+gem "ember-source", "1.0.0.rc6.2"
