@@ -18,12 +18,12 @@ class ProducersController < ApplicationController
 
   def show
     producer = Producer.find(params[:id])
-    consumers = producer.consumers
-
     p = producer.as_json
+    consumers = producer.consumers
     p[:webhook_count] = producer.webhooks.count
     p[:consumer_count] = producer.consumers.count
-    respond_with( {producer: p, consumers: consumers },
+    p[:consumer_ids] = consumers.map(&:id)
+    respond_with( { producer: p, consumers: consumers },
                   status: :ok,
                   location: producer )
   end
