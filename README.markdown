@@ -39,6 +39,10 @@ bundle exec sidekiq &
 rails s
 ```
 
+## To Update Ember
+Increment ember-source
+rails generate ember:install --head
+
 ## Webhook - Consumer - Producer explanation
 
 Since the design of Captain Webhooks is aimed to be painless for
