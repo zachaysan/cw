@@ -1,6 +1,6 @@
-Producers
 {{#each producer in controller}}
   {{view App.ProducerInListView contentBinding="producer"}}
+{{else}}
+<br>
+  You have not producers! Try making some!
 {{/each}}
-
-{{outlet}}
