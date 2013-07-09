@@ -12,18 +12,18 @@ class ProducersController < ApplicationController
     # check to see if a user is the allowed user
     return unauthorized unless allowed_user(email)
     producers = current_user.producers
-    producers_list = []
 
-    producers.each do |producer|
-      producers_list.append(producer.to_json)
-    end
-
-    render json: {:producers => producers_list}, status: :ok, location: producers_path
+    render json: {:producers => producers.map(&:as_json)}, status: :ok, location: producers_path
   end
 
   def show
     producer = Producer.find(params[:id])
-    respond_with(producer, status: :ok, location: producer)
+    p = producer.as_json
+    p[:webhook_count] = producer.webhooks.count
+    p[:consumer_count] = producer.consumers.count
+    respond_with( {producer: p },
+                  status: :ok,
+                  location: producer )
   end
   
   def create
@@ -34,10 +34,10 @@ class ProducersController < ApplicationController
   end
 
   def destroy
-    stuff = {producer: :destroyed}
+    response = {producer: :destroyed}
     producer = Producer.find(params[:id])
     producer.destroy
-    render json: stuff, status: :ok
+    render json: response, status: :ok
   end
 
   private
