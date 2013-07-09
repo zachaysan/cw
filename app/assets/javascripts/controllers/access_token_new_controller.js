@@ -23,7 +23,9 @@ App.AccessTokenNewController = Ember.ObjectController.extend({
     if (this.get('content.id')) {
       // Save the access token so we can log in forever
       localStorage.access_token = this.get('content.id');
-      applicationController.resetHeaders();
+      Ember.$.ajaxSetup({
+	headers: { 'AUTHORIZATION': localStorage.access_token }
+      });
       var applicationController = this.get('controllers.application');
       applicationController.updateCurrentUser();
       
