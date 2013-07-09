@@ -1,4 +1,4 @@
-Producer <br>
+<h1>Producer</h1>
 {{#if model}}
   <table>
   <tr>
@@ -16,13 +16,12 @@ Producer <br>
   <th><a class="btn btn-danger" {{action destroyRecord}}>delete</a></th>
   </tr>
   </table>
-{{#if consumers.length}}
-  {{#each consumer in consumers}}
-    consumer.name
+
+  <br>
+  <h2>Producers Consumers</h2>
+  {{#each consumer in model.consumers}}
+    {{consumer.name}}
   {{/each}}
 {{else}}
-  You have no consumers
-{{/if}}
-{{else}}
-Something went wrong.
+  Something went wrong.
 {{/if}}
