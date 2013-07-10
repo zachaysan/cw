@@ -8,9 +8,15 @@ class Webhook < ActiveRecord::Base
   scope :failed, where(failed: true)
   scope :attempt, where(attempt: true)
 
-  validates_presence_of :data
+  validates_presence_of :post_data
   validates_presence_of :post_uri
   validate :attempt_only_if_not_failed
+
+  MAX_ATTEMPTS = 10
+  
+  def max_attempts
+    MAX_ATTEMPTS
+  end
 
   private
 
