@@ -15,8 +15,10 @@ class ConsumersController < ApplicationController
   def show
     consumer_id = params[:id]
     consumer = Consumer.find(consumer_id)
+    c = consumer.as_json
+    c[:webhook_count] = consumer.webhooks.count
     return unauthroized unless owns(consumer)
-    respond_with( { consumer: consumer },
+    respond_with( { consumer: c },
                   status: :ok,
                   location: consumer )
   end
