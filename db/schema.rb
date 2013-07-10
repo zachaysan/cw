@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130626003410) do
+ActiveRecord::Schema.define(:version => 20130710200601) do
 
   create_table "access_tokens", :force => true do |t|
     t.integer  "user_id"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(:version => 20130626003410) do
   end
 
   create_table "webhooks", :force => true do |t|
-    t.text     "data",        :null => false
+    t.text     "post_data",   :null => false
     t.integer  "consumer_id", :null => false
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
