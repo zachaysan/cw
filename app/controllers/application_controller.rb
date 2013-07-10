@@ -23,4 +23,16 @@ class ApplicationController < ActionController::Base
     text = "HTTP_AUTHORIZATION header missing or access_token revoked or requesting incorrect user"
     render text: text, status: :unauthorized and return
   end
+
+  def owns(resource)
+    if resource.is_a? Producer
+      producer = resource
+      producer.users.include?(current_user)
+    elsif resource.is_a? Consumer
+      producer = resource.producer
+      producer.users.include?(current_user)
+    else
+      false
+    end
+  end
 end
