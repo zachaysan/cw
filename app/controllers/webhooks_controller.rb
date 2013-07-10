@@ -25,7 +25,7 @@ class WebhooksController < ApplicationController
   def webhook_params
     params.require(:webhook).permit(:consumer_id,
                                     :post_uri,
-                                    :data)
+                                    :post_data)
   end
 
 end
