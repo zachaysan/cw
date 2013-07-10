@@ -14,6 +14,18 @@
   <th><a class="btn btn-danger" {{action destroyRecord}}>delete</a></th>
   </tr>
   </table>
+  <h2>Webhooks</h2>
+  {{ model.webhooks.length }}
+
+  {{#each webhook in model.webhooks}}
+    foo
+    {{#linkTo "webhook" webhook}}
+      {{webhook.name}}
+    {{/linkTo}}
+  {{else}}
+    No webhooks for this consumer matey
+  {{/each}}
+
 {{else}}
   Something went wrong.
 {{/if}}
