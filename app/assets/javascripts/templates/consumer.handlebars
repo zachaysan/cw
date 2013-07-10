@@ -1,0 +1,19 @@
+<h1>Consumer</h1>
+{{#if model}}
+  <table>
+  <tr>
+  <th>id</th>
+  <th>name</th>
+  <th>webhooks</th>
+  <th> </th>
+  </tr>
+  <tr>
+  <th>{{model.id}}</th>
+  <th>{{model.name}}</th>
+  <th>{{model.webhook_count}}</th>
+  <th><a class="btn btn-danger" {{action destroyRecord}}>delete</a></th>
+  </tr>
+  </table>
+{{else}}
+  Something went wrong.
+{{/if}}
