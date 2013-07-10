@@ -20,7 +20,9 @@
   <br>
   <h2>Producers Consumers</h2>
   {{#each consumer in model.consumers}}
-    {{consumer.name}}
+    {{#linkTo "consumer" consumer}}
+      {{consumer.name}}
+    {{/linkTo}}
   {{/each}}
 {{else}}
   Something went wrong.
