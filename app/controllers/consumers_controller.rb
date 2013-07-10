@@ -11,6 +11,15 @@ class ConsumersController < ApplicationController
     consumers = producer.consumers
     respond_with(consumers, status: :ok, location: consumers_path)
   end
+
+  def show
+    consumer_id = params[:id]
+    consumer = Consumer.find(consumer_id)
+    return unauthroized unless owns(consumer)
+    respond_with( { consumer: consumer },
+                  status: :ok,
+                  location: consumer )
+  end
   
   def create
     consumer = consumer_params
@@ -26,12 +35,6 @@ class ConsumersController < ApplicationController
     consumer = Consumer.find(params[:id])
     consumer.destroy
     render json: stuff, status: :ok
-  end
-
-  protected
-
-  def owns(producer)
-    producer.users.include?(current_user)
   end
 
   private
