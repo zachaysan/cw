@@ -1,6 +1,6 @@
 class ProducersController < ApplicationController
-  skip_before_filter :verify_authenticity_token, except: :show
-  before_filter :authenticate!, except: :show
+  skip_before_filter :verify_authenticity_token
+  before_filter :authenticate!
 
   respond_to :json
 
@@ -18,6 +18,7 @@ class ProducersController < ApplicationController
 
   def show
     producer = Producer.find(params[:id])
+    return unauthorized unless owns(producer)
     p = producer.as_json
     consumers = producer.consumers
     p[:webhook_count] = producer.webhooks.count
