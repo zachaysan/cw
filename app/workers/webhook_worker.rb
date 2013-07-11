@@ -12,19 +12,24 @@ class WebhookWorker
     begin
       resp = self.class.post(webhook.post_uri,
                              body: webhook.post_data)
-      webhook.save!
       attempt.success = true
     rescue Exception => e
       puts e.message
       attempt.success = false
-      err = (PostError.where(message: e.message)).any? || nil
-      err ||= PostError.new
-      err.message = e.message
-      attempt.error = err
-      attempt.save
+      post_error = PostError.where(message: e.message).first
+      post_error ||= PostError.new
+      post_error.message = e.message
+      attempt.post_error = post_error
     end
-    webhook.attempt = false if not webhook.attempt
-    webhook.save
+    attempt.transaction do
+      # TODO: Add code to handle the case where this fails.
+      #       Its actually pretty hard to thing of how to 
+      #       properly handle this.
+
+      webhook.save!
+      post_error.save!
+      attempt.save!
+    end
   end
 
 end
