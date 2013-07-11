@@ -9,10 +9,14 @@ class WebhookWorker
     webhook = Webhook.find(webhook_id)
     attempt = Attempt.new
     attempt.webhook = webhook
+    post_error = nil
     begin
       resp = self.class.post(webhook.post_uri,
                              body: webhook.post_data)
       attempt.success = true
+
+      # Stop attempting since it went through OK
+      webhook.attempt = false
     rescue Exception => e
       puts e.message
       attempt.success = false
@@ -26,9 +30,19 @@ class WebhookWorker
       #       Its actually pretty hard to thing of how to 
       #       properly handle this.
 
-      webhook.save!
-      post_error.save!
-      attempt.save!
+      if webhook
+        webhook.save! 
+      else
+        Rails.logger("PANIC:#{__LINE__}: There was a problem finding the webhook, got nil instead in #{__FILE__}")
+      end
+      
+      post_error.save! if post_error
+      
+      if attempt
+        attempt.save!
+      else
+        Rails.logger("PANIC:#{__LINE__}: There was a problem finding the attempt, got nil instead in #{__FILE__}")
+      end
     end
   end
 
