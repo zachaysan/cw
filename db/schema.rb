@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711130618) do
+ActiveRecord::Schema.define(:version => 20130711150140) do
 
   create_table "access_tokens", :force => true do |t|
     t.integer  "user_id"
@@ -21,11 +21,11 @@ ActiveRecord::Schema.define(:version => 20130711130618) do
   end
 
   create_table "attempts", :force => true do |t|
-    t.integer  "webhook_id", :null => false
-    t.boolean  "success",    :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "error_id"
+    t.integer  "webhook_id",    :null => false
+    t.boolean  "success",       :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "post_error_id"
   end
 
   create_table "consumers", :force => true do |t|
@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(:version => 20130711130618) do
     t.string   "name",        :null => false
   end
 
-  create_table "errors", :force => true do |t|
+  create_table "post_errors", :force => true do |t|
     t.text     "message"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  add_index "errors", ["message"], :name => "errors_message_index", :length => {"message"=>16}
+  add_index "post_errors", ["message"], :name => "errors_message_index", :length => {"message"=>16}
 
   create_table "producers", :force => true do |t|
     t.datetime "created_at", :null => false
