@@ -2,31 +2,22 @@
 
 Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 
-## Pre-Launch Tasks
+## Pre-Beta Launch Tasks
 - Check threat level of CSFR prevention removal on access_token
-- Make POST /producer/:id/webhook take in:
-  - Resource
-  - Action
-  - Data
-  - Consumer id list
-OR
-- Make POST /producer/:id/consumer/:id/webhook take in:
-  - Resource
-  - Action
-  - Data
-- Define API
+- Allow user to set headers on webhook post
 - List latest webhook attempts
 - Show some data on webhook attempts
-- Make attempt model
 - Set up a packages page with free 60 day trial
 - Set up a webhooks info page with attempt data
 
-## Possible Nice-to-Haves
-- Allow a domain owner to verify a URL so that we can be less paranoid about possible use in spam.
+## Delayed until out of beta
+- Make more RESTful URIs, instead of relying on id for everything
 - Expose the multi-user abilities through the front end
+- Use UUIDs
 
 ## Delayed until traction
 - Set up a stripe account for payments -> Will use 30 day free model.
+- Allow a domain owner to verify a URL so that we can be less paranoid about possible use in spam.
 
 ## To Start
 ```
