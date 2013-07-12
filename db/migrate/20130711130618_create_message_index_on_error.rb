@@ -4,6 +4,6 @@ class CreateMessageIndexOnError < ActiveRecord::Migration
   end
 
   def down
-    remove_index(:errors, name: "erros_message_index")
+    remove_index(:errors, name: "errors_message_index")
   end
 end
