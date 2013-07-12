@@ -15,7 +15,6 @@ OR
   - Action
   - Data
 - Define API
-- Make client libraries
 - List latest webhook attempts
 - Show some data on webhook attempts
 - Make attempt model
