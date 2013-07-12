@@ -4,11 +4,11 @@ Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 
 ## Pre-Beta Launch Tasks
 - Check threat level of CSFR prevention removal on access_token
-- Allow user to set headers on webhook post
 - List latest webhook attempts
 - Show some data on webhook attempts
 - Set up a packages page with free 60 day trial
 - Set up a webhooks info page with attempt data
+- Set up post_headers in the client and make a test echos route that uses headers
 
 ## Delayed until out of beta
 - Make more RESTful URIs, instead of relying on id for everything
