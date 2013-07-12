@@ -1,5 +1,6 @@
 require 'clockwork'
 require 'httparty'
+require 'json'
 
 class WebhookWorker
   include Sidekiq::Worker
@@ -11,8 +12,12 @@ class WebhookWorker
     attempt.webhook = webhook
     post_error = nil
     begin
+      headers = webhook.post_headers
+      headers &&= JSON.parse(webhook.post_headers)
+
       resp = self.class.post(webhook.post_uri,
-                             body: webhook.post_data)
+                             body: webhook.post_data,
+                             headers: headers)
       attempt.success = true
 
       # Stop attempting since it went through OK
