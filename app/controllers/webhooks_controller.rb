@@ -5,8 +5,6 @@ class WebhooksController < ApplicationController
   respond_to :json
 
   def index
-    WebhookWorker.perform_async('Zach', 5)
-    respond_with({index: true})
   end
 
   def show
