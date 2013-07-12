@@ -23,7 +23,6 @@ OR
 
 ## Possible Nice-to-Haves
 - Allow a domain owner to verify a URL so that we can be less paranoid about possible use in spam.
-- Allow a user to have many consumers
 - Expose the multi-user abilities through the front end
 - Set up a consumer info page with rolled up info data
 - Add indexes to common preformance concerns (esp. on has_and_belongs_to_many)
