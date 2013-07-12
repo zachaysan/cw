@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130711150140) do
+ActiveRecord::Schema.define(:version => 20130712134736) do
 
   create_table "access_tokens", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(:version => 20130711150140) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "access_tokens", ["token"], :name => "access_tokens_token_index", :length => {"token"=>16}
 
   create_table "attempts", :force => true do |t|
     t.integer  "webhook_id",    :null => false
@@ -50,10 +52,15 @@ ActiveRecord::Schema.define(:version => 20130711150140) do
     t.string   "name",       :null => false
   end
 
+  add_index "producers", ["owner_id"], :name => "producers_owner_id_index"
+
   create_table "producers_users", :force => true do |t|
     t.integer "user_id"
     t.integer "producer_id"
   end
+
+  add_index "producers_users", ["producer_id"], :name => "producers_users_producer_id_index"
+  add_index "producers_users", ["user_id"], :name => "producers_users_user_id_index"
 
   create_table "users", :force => true do |t|
     t.string   "email"

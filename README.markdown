@@ -24,7 +24,6 @@ OR
 ## Possible Nice-to-Haves
 - Allow a domain owner to verify a URL so that we can be less paranoid about possible use in spam.
 - Expose the multi-user abilities through the front end
-- Add indexes to common preformance concerns (esp. on has_and_belongs_to_many)
 
 ## Delayed until traction
 - Set up a stripe account for payments -> Will use 30 day free model.
