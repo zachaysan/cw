@@ -1,0 +1,26 @@
+<h1>Webhook</h1>
+{{#if model}}
+  <table>
+  <tr>
+  <th>id</th>
+  <th>post_uri</th>
+  <th>post_data</th>
+  <th>attempting</th>
+  <th>failed</th>
+  <th>created_at</th>
+  <th>consumer</th>
+  </tr>
+  <tr>
+  <td>{{model.id}}</td>
+  <td>{{model.post_uri}}</td>
+  <td>{{model.post_data}}</td>
+  <td>{{model.attempt}}</td>
+  <td>{{model.failed}}</td>
+  <td>{{model.created_at}}</td>
+  <td>{{model.consumer.name}}</td>
+  </tr>
+  </table>
+
+{{else}}
+  Something went wrong.
+{{/if}}
