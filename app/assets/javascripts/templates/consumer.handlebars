@@ -15,12 +15,9 @@
   </tr>
   </table>
   <h2>Webhooks</h2>
-  {{ model.webhooks.length }}
-
   {{#each webhook in model.webhooks}}
-    foo
     {{#linkTo "webhook" webhook}}
-      {{webhook.name}}
+      {{webhook.created_at}} - {{webhook.failed}}<br>
     {{/linkTo}}
   {{else}}
     No webhooks for this consumer matey
