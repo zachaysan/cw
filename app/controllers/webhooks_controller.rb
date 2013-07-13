@@ -9,7 +9,7 @@ class WebhooksController < ApplicationController
 
   def show
     webhook = Webhook.find(params[:id])
-    respond_with(webhook, status: :ok, location: webhook)
+    respond_with({webhook: webhook}, status: :ok, location: webhook)
   end
   
   def create
