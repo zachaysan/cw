@@ -45,6 +45,23 @@
   }
 }
 
+.producerlist {
+  width: 100%;
+  line-height: 28px;
+
+  th {
+    background: #f0f7fc;
+    border-bottom: #e5edf4;
+    padding: 0 5px;
+    color: #637f96;
+    text-shadow: 1px 1px #ffffff;
+  }
+
+  td {
+    padding: 0 5px;
+  }
+}
+
 .variablelist {
   width: 600px;
   line-height: 28px;
