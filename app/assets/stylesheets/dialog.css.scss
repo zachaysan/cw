@@ -52,6 +52,21 @@ $experimental-support-for-svg: true;
     line-height: 40px;
     padding-bottom: 10px;
   }
+
+  .log {
+    height: 130px;
+  }
+
+  .webhookerror {
+    margin: -10px -10px 10px -10px;
+    background: #ffe7e7;
+    border-bottom: solid 1px #efc7c7;
+    color: #6e3e3e;
+
+    p {
+      padding: 10px;
+    }
+  }
 }
 
 

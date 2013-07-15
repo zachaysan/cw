@@ -3,6 +3,12 @@
     <h3>Webhook {{model.id}}</h3>
   </div>
   <div class="dialogcontent">
+    <div class="webhookerror">
+      <p>
+        There is a problem contacting the end point of this webhook. <a href="#">Retry</a>
+      </p>
+    </div>
+
     {{#if model}}
       <table class="variablelist">
         <tr>
@@ -39,7 +45,7 @@
       Something went wrong.
     {{/if}}
   </div>
-  <div class="dialogcontent">
+  <div class="dialogcontent log">
     <table>
       <tr>
         <td>Dec 12, 2012</td>
