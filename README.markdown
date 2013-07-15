@@ -9,6 +9,7 @@ Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 - Set up a packages page with free 60 day trial
 - Set up a webhooks info page with attempt data
 - Set up post_headers in the client and make a test echos route that uses headers
+- Set up a basic account page
 
 ## Delayed until out of beta
 - Make more RESTful URIs, instead of relying on id for everything
