@@ -2,6 +2,9 @@ require 'clockwork'
 require 'httparty'
 require 'json'
 
+# TODO: Audit for arbitrary code execution. Deserializing the HTTP 
+#       POST body and headers to use HTTParty might be a mistep.
+
 class WebhookWorker
   include Sidekiq::Worker
   include HTTParty
@@ -15,8 +18,11 @@ class WebhookWorker
       headers = webhook.post_headers
       headers &&= JSON.parse(webhook.post_headers)
 
+      body = webhook.post_data
+      body &&= JSON.parse(webhook.post_data)
+
       resp = self.class.post(webhook.post_uri,
-                             body: webhook.post_data,
+                             body: body,
                              headers: headers)
       attempt.success = true
 
