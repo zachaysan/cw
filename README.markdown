@@ -11,6 +11,7 @@ Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 - Set up post_headers in the client and make a test echos route that uses headers
 - Set up a basic account page
 - Use JQueryUI to center the webhook outlet (on the actual dialogue class name)
+- Write homepage copy
 
 ## Delayed until out of beta
 - Make more RESTful URIs, instead of relying on id for everything
