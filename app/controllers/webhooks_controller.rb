@@ -1,3 +1,7 @@
+require 'clockwork'
+require 'httparty'
+require 'json'
+
 class WebhooksController < ApplicationController
   skip_before_filter :verify_authenticity_token
   before_filter :authenticate!
@@ -14,7 +18,9 @@ class WebhooksController < ApplicationController
   
   def create
     webhook = Webhook.create(webhook_params)
-    WebhookWorker.perform_async webhook.id
+
+    puts WebhookWorker.perform_async webhook.id
+
     respond_with(webhook, status: :created, location: webhook)
   end
 
@@ -23,7 +29,8 @@ class WebhooksController < ApplicationController
   def webhook_params
     params.require(:webhook).permit(:consumer_id,
                                     :post_uri,
-                                    :post_data)
+                                    :post_data,
+                                    :post_headers)
   end
 
 end
