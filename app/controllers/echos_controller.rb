@@ -4,10 +4,9 @@ class EchosController < ApplicationController
   respond_to :json
 
   def create
-    puts params
+    Rails.logger.info "  Headers: #{request.headers.select {|k,v| k[0..3] == 'HTTP'}}"
+
     render text: :done, status: :created 
   end
-
-  private
 
 end
