@@ -20,26 +20,18 @@ $experimental-support-for-svg: true;
 
 .dialog {
   position: fixed;
-  opacity: 0.5;
-  -webkit-transition: opacity .3s ease-in-out;
-  -moz-transition: opacity .3s ease-in-out;
-  transition: opacity .3s ease-in-out;
+  -webkit-animation-duration: 0.30s;
+  -webkit-animation-name: bounce;
+  -moz-animation-duration: 0.30s;
+  -moz-animation-name: bounce;
+  animation-duration: 0.30s;
+  animation-name: bounce;
   position: absolute;
   z-index: 6000;
   background: #f3f3f3;
   border-radius: 5px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
   padding: 10px;
-}
-  .fadein .dialog {
-    opacity: 1;
-    -webkit-animation-duration: 0.30s;
-    -webkit-animation-name: bounce;
-    -moz-animation-duration: 0.30s;
-    -moz-animation-name: bounce;
-    animation-duration: 0.30s;
-    animation-name: bounce;
-  }
 
   .dialogcontent {
     background: #ffffff;
@@ -49,15 +41,22 @@ $experimental-support-for-svg: true;
     padding: 25px;
   }
 
-  .dialogbuttons {
-    text-align: right;
-    margin-top: 10px;
+  h3 {
+    font-size: 18px;
+    color: #777777;
+    font-weight: normal;
+    text-shadow: 1px 1px #ffffff;
+    line-height: 40px;
+    padding-bottom: 10px;
   }
+}
+
 
 /* Bounce Animation */
 @-webkit-keyframes bounce {
   from {
     @include scale(0.80);
+    opacity: 0.5;
   }
 
   66% {
@@ -66,12 +65,14 @@ $experimental-support-for-svg: true;
 
   to {
     @include scale(1);
+    opacity: 1;
   }
 }
 
 @-moz-keyframes bounce {
   from {
     @include scale(0.80);
+    opacity: 0.5;
   }
 
   66% {
@@ -80,12 +81,14 @@ $experimental-support-for-svg: true;
 
   to {
     @include scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes bounce {
   from {
     @include scale(0.80);
+    opacity: 0.5;
   }
 
   66% {
@@ -94,5 +97,6 @@ $experimental-support-for-svg: true;
 
   to {
     @include scale(1);
+    opacity: 1;
   }
 }
