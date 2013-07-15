@@ -3,7 +3,12 @@ $experimental-support-for-svg: true;
 
 .dialogshadow {
   position: fixed;
-  opacity: 0;
+  -webkit-animation-duration: 0.30s;
+  -webkit-animation-name: fadein;
+  -moz-animation-duration: 0.30s;
+  -moz-animation-name: fadein;
+  animation-duration: 0.30s;
+  animation-name: fadein;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -14,9 +19,6 @@ $experimental-support-for-svg: true;
   @include transition-property(opacity);
   @include transition-duration(1.1s);
 }
-  .fadein .dialogshadow {
-    opacity: 1;
-  }
 
 .dialog {
   position: fixed;
@@ -97,6 +99,37 @@ $experimental-support-for-svg: true;
 
   to {
     @include scale(1);
+    opacity: 1;
+  }
+}
+
+/* Fadein Animation */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
     opacity: 1;
   }
 }
