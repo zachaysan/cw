@@ -1,30 +1,52 @@
-<h1>Consumer</h1>
 {{#if model}}
-  <table>
-    <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>webhooks</th>
-      <th> </th>
-    </tr>
-    <tr>
-      <td>{{model.id}}</td>
-      <td>{{model.name}}</td>
-      <td>{{model.webhook_count}}</td>
-      <td><a class="btn btn-danger" {{action destroyRecord}}>delete</a></td>
-    </tr>
-  </table>
-  <h2>Webhooks</h2>
-  {{#each webhook in model.webhooks}}
-    {{#linkTo "webhook" webhook}}
-      {{webhook.created_at}} - {{webhook.failed}}<br>
-    {{/linkTo}}
-  {{else}}
-    No webhooks for this consumer matey
-  {{/each}}
+  <div class="contentframe">
+    <h1>{{consumer.name}}</h1>
+    <table>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>webhooks</th>
+        <th> </th>
+      </tr>
+      <tr>
+        <td>{{model.id}}</td>
+        <td>{{model.name}}</td>
+        <td>{{model.webhook_count}}</td>
+        <td><a class="btn btn-danger" {{action destroyRecord}}>delete</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="contentframe">
+    <h2>Webhooks</h2>
+    <div class="tablewrapper">
+      <table class="webhooklist">
+        <tr>
+          <th>ID</th>
+          <th>Date Delivered</th>
+          <th>Time Delivered</th>
+          <th>Endpoint</th>
+          <th>Status</th>
+          <th>Attempts</th>
+        </tr>
+        {{#each webhook in model.webhooks}}
+          <tr>
+            <td>{{#linkTo "webhook" webhook}}{{webhook.id}}{{/linkTo}}</td>
+            <td>date delivered</td>
+            <td>time delivered</td>
+            <td>date delivered</td>
+            <td>{{webhook.failed}}</td>
+            <td>attempts</td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+  </div>
 
 {{else}}
-  Something went wrong.
+  <div class="contentframe">
+    Something went wrong.
+  </div>
 {{/if}}
 
 {{outlet webhook}}

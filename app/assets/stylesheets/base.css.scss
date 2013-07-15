@@ -5,7 +5,7 @@ body {
   font-family: Helvetica, "Helvetica Neue", Arial, Tahoma, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  background: #faf9f4;
+  background: #e9f1f3;
   color: #303030;
 }
 
@@ -25,4 +25,24 @@ a {
 
 .application-content {
   margin: 50px 0;
+}
+
+.contentframe {
+  border: solid 1px #bfd9e2;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 1px 1px #ffffff;
+  margin: 20px 0;
+}
+
+h1 {
+  font-size: 22px;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: normal;
+  padding: 10px;
 }
