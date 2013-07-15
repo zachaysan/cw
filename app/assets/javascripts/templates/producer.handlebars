@@ -1,29 +1,31 @@
-<h1>Producer</h1>
-{{#if model}}
-  <table>
-  <tr>
-  <th>id</th>
-  <th>name</th>
-  <th>webhooks</th>
-  <th>consumers</th>
-  <th> </th>
-  </tr>
-  <tr>
-  <td>{{model.id}}</td>
-  <td>{{model.name}}</td>
-  <td>{{model.webhook_count}}</td>
-  <td>{{model.consumer_count}}</td>
-  <td><a class="btn btn-danger" {{action destroyRecord}}>delete</a></td>
-  </tr>
-  </table>
+<div class="contentframe">
+  <h1>Producer</h1>
+  {{#if model}}
+    <table class="producerlist">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Webhooks</th>
+        <th>Consumers</th>
+        <th> </th>
+      </tr>
+      <tr>
+        <td>{{model.id}}</td>
+        <td>{{model.name}}</td>
+        <td>{{model.webhook_count}}</td>
+        <td>{{model.consumer_count}}</td>
+        <td><a class="btn btn-danger" {{action destroyRecord}}>delete</a></td>
+      </tr>
+    </table>
 
-  <br>
-  <h2>Consumers</h2>
-  {{#each consumer in model.consumers}}
-    {{#linkTo "consumer" consumer}}
-      {{consumer.name}}
-    {{/linkTo}}
-  {{/each}}
-{{else}}
-  Something went wrong.
-{{/if}}
+    <h2>Consumers</h2>
+    {{#each consumer in model.consumers}}
+      {{#linkTo "consumer" consumer}}
+        {{consumer.name}}
+      {{/linkTo}}
+    {{/each}}
+
+  {{else}}
+    Something went wrong.
+  {{/if}}
+</div>
