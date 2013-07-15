@@ -12,11 +12,11 @@
     {{#if model}}
       <table class="variablelist">
         <tr>
-          <th>ID</th>
-          <td>{{model.id}}</td>
+          <th>End Point Name</th>
+          <td>{{model.consumer.name}}</td>
         </tr>
         <tr>
-          <th>Post URI</th>
+          <th>End Point URI</th>
           <td>{{model.post_uri}}</td>
         </tr>
         <tr>
@@ -24,20 +24,16 @@
           <td>{{model.post_data}}</td>
         </tr>
         <tr>
-          <th>Attempting</th>
+          <th>Status</th>
           <td>{{model.attempt}}</td>
         </tr>
         <tr>
-          <th>Failed</th>
-          <td>{{model.failed}}</td>
+          <th>Attempts</th>
+          <td>###</td>
         </tr>
         <tr>
           <th>Created At</th>
           <td>{{model.created_at}}</td>
-        </tr>
-        <tr>
-          <th>End Point</th>
-          <td>{{model.consumer.name}}</td>
         </tr>
       </table>
 
