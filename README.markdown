@@ -36,6 +36,7 @@ rails generate ember:install --head
 Since the design of Captain Webhooks is aimed to be painless for
 multiple site management, one user can manage and own multiple 
 "producers" (think, websites, or sub-domains, or autonomous robots).
+For the beta release these might be called APIs or Servers. 
 
 Say you ran guestlistapp.com but you wanted your trusty sidekick to
 keep on top of the Captain Webhooks metrics. You could give him your
