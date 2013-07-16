@@ -12,8 +12,9 @@ class ProducersController < ApplicationController
     # check to see if a user is the allowed user
     return unauthorized unless allowed_user(email)
     producers = current_user.producers
-
-    render json: {:producers => producers.map(&:as_json)}, status: :ok, location: producers_path
+    consumers = producers.map(&:consumers).flatten
+    consumers = consumers.map(&:id)
+    render json: {producers: producers.map(&:as_json), consumers: consumers.as_json}, status: :ok, location: producers_path
   end
 
   def show
@@ -21,13 +22,22 @@ class ProducersController < ApplicationController
     return unauthorized unless owns(producer)
 
     consumers = producer.consumers
-
+    
     p = producer.as_json
     p[:webhook_count] = producer.webhooks.count
     p[:consumer_count] = producer.consumers.count
     p[:consumer_ids] = consumers.map(&:id)
-
-    respond_with( { producer: p, consumers: consumers },
+    
+    c = []
+    
+    # TODO: fix hacky code
+    consumers.each do |consumer|
+      webhook_ids = consumer.webhooks.map(&:id)
+      c << consumer.as_json
+      c[-1][:webhook_ids] = webhook_ids
+    end
+    
+    respond_with( { producer: p, consumers: c },
                   status: :ok,
                   location: producer )
   end
