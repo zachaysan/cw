@@ -1,5 +1,4 @@
 .tablewrapper {
-  width: 100%;
   margin: 0 -10px;
 }
 
@@ -16,6 +15,7 @@
 
     &:nth-child(6n+1) {
       width: 60px;
+      padding-left: 10px;
     }
 
     &:nth-child(6n+2) {
@@ -33,14 +33,20 @@
     &:nth-child(6n+6) {
       width: 75px;
       text-align: right;
+      padding-right: 10px;
     }
   }
 
   td {
     padding: 0 5px;
 
+    &:nth-child(6n+1) {
+      padding-left: 10px;
+    }
+
     &:nth-child(6n+6) {
       text-align: right;
+      padding-right: 10px;
     }
   }
 }

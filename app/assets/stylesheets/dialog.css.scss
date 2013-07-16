@@ -40,17 +40,38 @@ $experimental-support-for-svg: true;
     border: solid 1px #d4d4d4;
     border-radius: 5px;
     box-shadow: 1px 1px #ffffff;
-    padding: 25px;
-    margin-top: 5px;
+    padding: 10px;
   }
 
-  h3 {
-    font-size: 18px;
-    color: #777777;
-    font-weight: normal;
-    text-shadow: 1px 1px #ffffff;
-    line-height: 40px;
-    padding-bottom: 10px;
+  .titlebar {
+    position: relative;
+
+    h3 {
+      font-size: 18px;
+      color: #777777;
+      font-weight: normal;
+      text-shadow: 1px 1px #ffffff;
+      line-height: 30px;
+      padding-bottom: 10px;
+    }
+
+    .mq-button {
+      position: absolute;
+      right: 0px;
+      top: 5px;
+
+      .mq-wrapper {
+        height: 17px;
+      }
+
+      b {
+        width: 8px;
+        height: 20px;
+        margin: 0 -4px;
+        display: inline-block;
+        background: url("/assets/x.png") no-repeat center center;
+      }
+    }
   }
 
   .log {

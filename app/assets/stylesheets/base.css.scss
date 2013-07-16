@@ -1,6 +1,10 @@
 @import "compass";
 $experimental-support-for-svg: true;
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: Helvetica, "Helvetica Neue", Arial, Tahoma, sans-serif;
   font-size: 13px;
@@ -38,12 +42,11 @@ a {
 
 h1 {
   font-size: 22px;
-  padding: 10px;
 }
 
 h2 {
   font-size: 18px;
   line-height: 28px;
   font-weight: normal;
-  padding: 10px;
+  padding-bottom: 10px;
 }
