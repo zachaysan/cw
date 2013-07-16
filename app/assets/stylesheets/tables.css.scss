@@ -51,7 +51,7 @@
   }
 }
 
-.producerlist {
+.consumerlist {
   width: 100%;
   line-height: 28px;
 
@@ -61,10 +61,26 @@
     padding: 0 5px;
     color: #637f96;
     text-shadow: 1px 1px #ffffff;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      padding-right: 10px;
+    }
   }
 
   td {
     padding: 0 5px;
+
+    &:first-child {
+      padding-left: 10px;
+    }
+
+    &:last-child {
+      padding-right: 10px;
+    }
   }
 }
 

@@ -11,19 +11,10 @@
       {{/unless}}
       <li class="link">{{#linkTo "producers"}}Producers{{/linkTo}}</li>
       <li class="link">{{#linkTo "user"}}Account{{/linkTo}}</li>
-      <li class="buttons">
+      <li class="link">
         {{#if currentUser}}
-          <div {{action logOut}} class="mq-button mq-raised mq-medium mq-white">
-            <div class="mq-wrapper">
-              <i>Logout</i>
-            </div>
-          </div>
+          <a href="#" {{action logOut}}>Logout</a>
         {{/if}}
-        <div {{action showNewEventDialog}} class="mq-button mq-raised mq-medium mq-orange">
-          <div class="mq-wrapper">
-            <i>Add a Hook</i>
-          </div>
-        </div>
       </li>
     </div>
   </div>

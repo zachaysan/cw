@@ -1,35 +1,28 @@
-{{#if model}}
-  <div class="contentframe">
-    <h2>{{model.webhook_count}} Webhooks for {{model.name}}</h2>
-    <div class="tablewrapper">
-      <table class="webhooklist">
+<div class="contentframe">
+  <h2>{{model.webhook_count}} Webhooks for {{model.name}}</h2>
+  <div class="tablewrapper">
+    <table class="webhooklist">
+      <tr>
+        <th>ID</th>
+        <th>Date Delivered</th>
+        <th>Time Delivered</th>
+        <th>Endpoint</th>
+        <th>Status</th>
+        <th>Attempts</th>
+      </tr>
+      {{#each webhook in model.webhooks}}
         <tr>
-          <th>ID</th>
-          <th>Date Delivered</th>
-          <th>Time Delivered</th>
-          <th>Endpoint</th>
-          <th>Status</th>
-          <th>Attempts</th>
+          <td>{{#linkTo "webhook" webhook}}{{webhook.id}}{{/linkTo}}</td>
+          <td>date delivered</td>
+          <td>time delivered</td>
+          <td>date delivered</td>
+          <td>{{webhook.failed}}</td>
+          <td>attempts</td>
         </tr>
-        {{#each webhook in model.webhooks}}
-          <tr>
-            <td>{{#linkTo "webhook" webhook}}{{webhook.id}}{{/linkTo}}</td>
-            <td>date delivered</td>
-            <td>time delivered</td>
-            <td>date delivered</td>
-            <td>{{webhook.failed}}</td>
-            <td>attempts</td>
-          </tr>
-        {{/each}}
-      </table>
-    </div>
+      {{/each}}
+    </table>
   </div>
-
-{{else}}
-  <div class="contentframe">
-    Something went wrong.
-  </div>
-{{/if}}
+</div>
 
 {{outlet webhook}}
 
