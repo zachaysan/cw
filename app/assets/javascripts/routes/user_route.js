@@ -1,4 +1,4 @@
-App.UserRoute = Ember.Route.extend({
+App.UserRoute = App.AuthRoute.extend({
   setupController: function(controller, model){
     if (controller.get('isEditing')) {
       controller.stopEditing();
