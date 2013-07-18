@@ -17,6 +17,3 @@ dump.*
 
 # Ignore saved files
 *~
-
-# Ignore database.yml since it has secrets
-config/database.yml
