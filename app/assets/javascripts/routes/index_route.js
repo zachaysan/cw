@@ -1,5 +1,5 @@
-App.IndexRoute = Ember.Route.extend({
-  model: function() {
-    return null;
+App.IndexRoute = App.AuthRoute.extend({
+  redirect: function() {
+    this.transitionTo('producers');
   }
 });
