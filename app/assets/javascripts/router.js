@@ -11,3 +11,11 @@ App.Router.map(function() {
     this.route("new");
   });
 });
+
+App.AuthRoute = Ember.Route.extend({
+  redirect: function() {
+    if (!localStorage.access_token) {
+      this.transitionTo('access_token.new');
+    }
+  }
+});
