@@ -5,6 +5,10 @@ App.AccessTokenNewRoute = Ember.Route.extend({
   },
 
   setupController: function(controller) {
+    if (localStorage.access_token){
+      this.transitionTo('producers');
+    };
+
     controller.startEditing();
   },
   
