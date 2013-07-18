@@ -13,11 +13,11 @@
       {{#each webhook in model.webhooks}}
         <tr>
           <td>{{#linkTo "webhook" webhook}}{{webhook.id}}{{/linkTo}}</td>
-          <td>date delivered</td>
-          <td>time delivered</td>
-          <td>date delivered</td>
+          <td>{{webhook.createdDate}}</td>
+          <td>{{webhook.createdTime}}</td>
+          <td>{{webhook.postUri}}</td>
           <td>{{webhook.failed}}</td>
-          <td>attempts</td>
+          <td>:(</td>
         </tr>
       {{/each}}
     </table>
