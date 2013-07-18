@@ -12,6 +12,7 @@ Photo by [country_boy_shane](http://www.flickr.com/photos/shanegorski/)
 - Set up a basic account page
 - Use JQueryUI to center the webhook outlet (on the actual dialogue class name)
 - Write homepage copy
+- Redirect to login screen if not logged in
 
 ## Delayed until out of beta
 - Make more RESTful URIs, instead of relying on id for everything
