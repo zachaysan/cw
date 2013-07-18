@@ -1,4 +1,4 @@
-App.UserRoute = App.AuthRoute.extend({
+App.UserRoute = App.Route.extend({
   setupController: function(controller, model){
     if (controller.get('isEditing')) {
       controller.stopEditing();
