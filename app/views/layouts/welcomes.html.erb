@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-  <%= yield %>
-  lol
-</body>
+  <head>
+    <title>Captain Webhooks - Push APIs for Yarrr</title>
+    <%= stylesheet_link_tag "reset", :media => "all" %>
+    <%= stylesheet_link_tag "website/website", :media => "all" %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript" src="//use.typekit.net/mxe5mbd.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body class="website">
+    <%= yield %>
+  </body>
 </html>
-

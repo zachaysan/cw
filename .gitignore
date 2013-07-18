@@ -17,3 +17,6 @@ dump.*
 
 # Ignore saved files
 *~
+
+# Ignore DS_Store
+.DS_Store

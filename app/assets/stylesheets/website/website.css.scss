@@ -1,0 +1,129 @@
+@import "compass";
+$experimental-support-for-svg: true;
+body.website {
+  background: #151515 url("/assets/website/pirate.jpg") no-repeat top right;
+  background-size: cover;
+  color: #ffffff;
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+.website {
+  a {
+    text-decoration: none;
+    @include transition(color 0.2s);
+  }
+
+  .container {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .websiteheader {
+    height: 31px;
+    margin: 35px 0;
+    font-size: 16px;
+
+    .logo {
+      float: left;
+      height: 31px;
+      width: 146px;
+      background: url("/assets/website/logo.png") no-repeat 0px 7px;
+      background-size: 146px 17px;
+    }
+
+    a {
+      display: block;
+      background: rgba(0,0,0,0.5);
+      padding: 0 10px;
+      line-height: 31px;
+      float: right;
+      color: #a6a6a7;
+
+      &:hover {
+        color: #fff774;
+      }
+    }
+  }
+
+  h1 {
+    margin-top: 70px;
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "adelle",serif;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .attribution {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 11px;
+
+    a {
+      background: rgba(0,0,0,0.5);
+      color: #ffffff;
+      display: inline-block;
+      padding: 0 7px;
+      line-height: 20px;
+
+      &:hover {
+        color: #fff774;
+      }
+    }
+  }
+
+  .example {
+    font-size: 15px;
+    line-height: 18px;
+    font-family: Courier;
+    margin-top: 40px;
+    padding: 15px;
+    background: rgba(255,255,255,0.2);
+    width: 630px;
+  }
+
+  .signup {
+    margin-top: 55px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="email"] {
+      padding: 12px 9px;
+      font-size: 16px;
+      border: solid 1px #3d3d3d;
+      border-radius: 5px;
+      width: 300px;
+      color: #ffffff;
+      box-shadow: 1px 1px 0px rgba(255,255,255,0.3);
+      background-color: #666666;
+      @include background-image(linear-gradient(top,  #666666 0%,#797979 25%,#898989 100%));
+      vertical-align: middle;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      height: 45px;
+      width: 123px;
+      vertical-align: middle;
+      font-size: 10px;
+      text-align: center;
+      background: url("/assets/website/notifyme.png") no-repeat;
+      border: none;
+      padding: 0;
+      background-size: 100% 100%;
+      margin-top: 2px;
+    }
+  }
+
+  ::-webkit-input-placeholder { color:#d1d1d1; }
+  ::-moz-placeholder { color:#d1d1d1; } /* firefox 19+ */
+  :-ms-input-placeholder { color:#d1d1d1; } /* ie */
+  input:-moz-placeholder { color:#d1d1d1; }
+
+}
