@@ -20,3 +20,5 @@ dump.*
 
 # Ignore database.yml since it has secrets
 config/database.yml
+
+.DS_Store

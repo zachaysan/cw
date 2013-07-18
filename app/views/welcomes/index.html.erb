@@ -1,1 +1,33 @@
-fooo
+<div class="container">
+  <div class="websiteheader">
+    <div class="logo"></div>
+    <a href="/app/#/">Login</a>
+  </div>
+
+  <h1>Easier push-APIs through <br /> webhooks as a service.</h1>
+
+  <div class="example">
+    gem "cwr", "~> 0.0.1"<br>
+    <br>
+    @cwr = CWR.new<br>
+    @cwr.email = "Cave.Johnson@aperturescience.com"<br>
+    @cwr.password = "rampsRexpen$ive"<br>
+    <br>
+    producer = @cwr.create_producer(producer_name)<br>
+    consumer = @cwr.create_consumer("Atlas Robot")<br>
+    <br>
+    producer.create_webhook(consumer, "http://atlasbot.io/challenges", {<br>
+    &nbsp;&nbsp;"task" => "try not to die"<br>
+    })<br>
+  </div>
+
+  <div class="signup">
+    <form action="http://guestlistapp.createsend.com/t/r/s/jutjxt/" method="post">
+        <label for="email">Get notified when we launch our beta</label>
+        <input is="email" type="email" name="cm-jutjxt-jutjxt" required placeholder="Email Address" />&nbsp;
+        <button type="submit" />
+    </form>
+  </div>
+
+  <div class="attribution"><a href="http://www.flickr.com/photos/shanegorski/2820420847/sizes/o/">Shane Gorski</a></div>
+</div>
