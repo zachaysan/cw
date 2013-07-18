@@ -8,14 +8,14 @@
       {{#unless currentUser}}
         <li class="link">{{#linkTo "user.new"}}Sign Up{{/linkTo}}</li>
         <li class="link">{{#linkTo "access_token.new"}}Log In{{/linkTo}}</li>
-      {{/unless}}
-      <li class="link">{{#linkTo "producers"}}Producers{{/linkTo}}</li>
-      <li class="link">{{#linkTo "user"}}Account{{/linkTo}}</li>
+      {{else}}
+        <li class="link">{{#linkTo "producers"}}Producers{{/linkTo}}</li>
+        <li class="link">{{#linkTo "user"}}Account{{/linkTo}}</li>
+
       <li class="link">
-        {{#if currentUser}}
           <a href="#" {{action logOut}}>Logout</a>
-        {{/if}}
       </li>
+      {{/unless}}
     </div>
   </div>
 </div>
