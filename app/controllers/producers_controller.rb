@@ -12,9 +12,14 @@ class ProducersController < ApplicationController
     # check to see if a user is the allowed user
     return unauthorized unless allowed_user(email)
     producers = current_user.producers
-    consumers = producers.map(&:consumers).flatten
-    consumers = consumers.map(&:id)
-    render json: {producers: producers.map(&:as_json), consumers: consumers.as_json}, status: :ok, location: producers_path
+    json_producers = []
+    producers.each do |producer|
+      consumer_ids = producer.consumers.map(&:id)
+      producer = producer.as_json
+      producer[:consumer_ids] = consumer_ids
+      json_producers << producer
+    end
+    render json: {producers: json_producers}, status: :ok, location: producers_path
   end
 
   def show
