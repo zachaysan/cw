@@ -16,8 +16,16 @@
           <td>{{webhook.createdDate}}</td>
           <td>{{webhook.createdTime}}</td>
           <td>{{webhook.postUri}}</td>
-          <td>{{webhook.failed}}</td>
-          <td>:(</td>
+	  {{#if webhook.failed}}
+	    {{#if webhook.attempt}}
+	    <td>Retrying</td>
+	    {{else}}
+	    <td>Failed</td>
+	    {{/if}}
+	  {{else}}
+	    <td>succeeded</td>
+	  {{/if}}
+	  <td>{{webhook.attempt_count}}</td>
         </tr>
       {{/each}}
     </table>
