@@ -36,12 +36,13 @@ class ConsumersController < ApplicationController
     c = consumer.as_json
     
     webhooks = consumer.webhooks
-    c[:failed_webhook_ids] = consumer.webhooks.map(&:id)
-    w = webhooks.as_json
+
+    c[:failed_webhook_ids] = consumer.webhooks.select {|w| w.failed}.map(&:id)
 
     c[:webhook_count] = webhooks.count
     c[:webhook_ids] = webhooks.map(&:id)
-    respond_with( { consumer: c, webhooks: webhooks },
+
+    respond_with( { consumer: c},
                   status: :ok,
                   location: consumer )
   end
