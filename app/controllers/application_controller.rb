@@ -31,6 +31,9 @@ class ApplicationController < ActionController::Base
     elsif resource.is_a? Consumer
       producer = resource.producer
       producer.users.include?(current_user)
+    elsif resource.is_a? Webhook
+      producer = resource.producer
+      producer.users.include?(current_user)
     else
       false
     end
