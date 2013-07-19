@@ -15,10 +15,15 @@ class ConsumersController < ApplicationController
     elsif params[:ids]
       consumer_ids = params[:ids]
       consumers = Consumer.find(consumer_ids)
+      json_consumers = []
       consumers.each do |consumer|
         return unauthorized unless owns(consumer)
+        webhooks = consumer.webhooks
+        consumer = consumer.as_json
+        consumer[:webhook_ids] = webhooks.map(&:id)
+        json_consumers << consumer
       end
-      respond_with(consumers.as_json, status: :ok, location: consumers_path)
+      respond_with(json_consumers, status: :ok, location: consumers_path)
     end
   end
 
