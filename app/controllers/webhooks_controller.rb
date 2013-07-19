@@ -9,6 +9,13 @@ class WebhooksController < ApplicationController
   respond_to :json
 
   def index
+    webhook_ids = params[:ids]
+    webhooks = Webhook.find(webhook_ids)
+    json_webhooks = []
+    webhooks.each do |webhook|
+      return unauthorized unless owns(webhook)
+    end
+    respond_with(webhooks.as_json, status: :ok, location: webhooks_path)
   end
 
   def show
