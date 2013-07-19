@@ -1,10 +1,11 @@
-App.Webhook = DS.Model.extend({
-  postUri:    DS.attr('string'),
-  postData:   DS.attr('string'),
-  attempt:    DS.attr('boolean'),
-  failed:     DS.attr('boolean'),
-  createdAt:  DS.attr('string'),
-  consumer:   DS.belongsTo('App.Consumer'),
+App.Webhook =    DS.Model.extend({
+  postUri:       DS.attr('string'),
+  postData:      DS.attr('string'),
+  attempt:       DS.attr('boolean'),
+  failed:        DS.attr('boolean'),
+  createdAt:     DS.attr('string'),
+  attempt_count: DS.attr('string'),
+  consumer:      DS.belongsTo('App.Consumer'),
 
   createdDate: function(){
     var createdAt = this.get('createdAt');
