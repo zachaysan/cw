@@ -14,7 +14,6 @@
       </p>
     </div>
 
-    {{#if model}}
       <table class="variablelist">
         <tr>
           <th>End Point Name</th>
@@ -22,11 +21,11 @@
         </tr>
         <tr>
           <th>End Point URI</th>
-          <td>{{model.post_uri}}</td>
+          <td>{{model.postUri}}</td>
         </tr>
         <tr>
           <th>Post Data</th>
-          <td>{{model.post_data}}</td>
+          <td>{{model.postData}}</td>
         </tr>
         <tr>
           <th>Status</th>
@@ -34,24 +33,18 @@
         </tr>
         <tr>
           <th>Attempts</th>
-          <td>###</td>
+          <td>{{model.attemptCount}}</td>
         </tr>
         <tr>
           <th>Created At</th>
-          <td>{{model.created_at}}</td>
+          <td>{{model.createdAt}}</td>
         </tr>
       </table>
-
-    {{else}}
-      Something went wrong.
-    {{/if}}
   </div>
   <div class="dialogcontent log">
     <table>
       <tr>
-        <td>Dec 12, 2012</td>
-        <td>03:45:52</td>
-        <td>Received no reply from end point. Retrying in 1 hour.</td>
+        <td>{{model.attemptExplanation}}</td>
       </tr>
     </table>
   </div>
