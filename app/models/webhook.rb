@@ -19,6 +19,30 @@ class Webhook < ActiveRecord::Base
     MAX_ATTEMPTS
   end
 
+  # TODO: Fix hack - Sorry Justin :S
+  def attempt_explanation
+    explanation = ""
+    if failed and not attempt
+      explanation = "This webhook has permanently failed\n"
+      self.attempts.each do |attempt|
+        explanation += "failed at: #{attempt.created_at}\n"
+      end
+    elsif not failed and attempt
+      explanation = "We are trying to send this webhook\n"
+      self.attempts.each do |attempt|
+        explanation += "failed at: #{attempt.created_at}\n"
+      end
+    elsif not failed and not attempt
+      explanation = "We succeeded in sending this webhook\n"
+      attempt_array = self.attempts.to_a
+      attempt_array[0..-2].each do |attempt|
+        explanation += "failed at: #{attempt.created_at}\n"        
+      end
+      attempt = attempt_array[-1]
+      explanation += "succeeded at: #{attempt.created_at}\n"
+    end
+  end
+
   private
 
   def attempt_only_if_not_failed
