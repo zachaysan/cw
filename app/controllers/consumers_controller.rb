@@ -5,11 +5,21 @@ class ConsumersController < ApplicationController
   respond_to :json
 
   def index
-    producer_id = params[:producer_id]
-    producer = Producer.find(producer_id)
-    return unauthorized unless owns(producer)
-    consumers = producer.consumers
-    respond_with(consumers, status: :ok, location: consumers_path)
+    # TODO: Refactor hacky code
+    if params[:producer_id]
+      producer_id = params[:producer_id]
+      producer = Producer.find(producer_id)
+      return unauthorized unless owns(producer)
+      consumers = producer.consumers
+      respond_with(consumers, status: :ok, location: consumers_path)
+    elsif params[:ids]
+      consumer_ids = params[:ids]
+      consumers = Consumer.find(consumer_ids)
+      consumers.each do |consumer|
+        return unauthorized unless owns(consumer)
+      end
+      respond_with(consumers.as_json, status: :ok, location: consumers_path)
+    end
   end
 
   def show
