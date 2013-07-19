@@ -5,7 +5,6 @@
       <tr>
         <th>ID</th>
         <th>Date Delivered</th>
-        <th>Time Delivered</th>
         <th>Endpoint</th>
         <th>Status</th>
         <th>Attempts</th>
@@ -14,7 +13,6 @@
         <tr>
           <td>{{#linkTo "webhook" webhook}}{{webhook.id}}{{/linkTo}}</td>
           <td>{{webhook.createdDate}}</td>
-          <td>{{webhook.createdTime}}</td>
           <td>{{webhook.postUri}}</td>
 	  {{#if webhook.failed}}
 	    {{#if webhook.attempt}}
