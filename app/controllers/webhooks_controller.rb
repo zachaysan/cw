@@ -16,9 +16,12 @@ class WebhooksController < ApplicationController
       return unauthorized unless owns(webhook)
       attempt_ids = webhook.attempts.map(&:id)
       attempt_count = attempt_ids.length
+      # Giant HACK that Jaco LOVES:
+      attempt_explanation = webhook.attempt_explanation
       webhook = webhook.as_json
       webhook[:attempt_count] = attempt_count
       webhook[:attempt_ids] = attempt_ids
+      webhook[:attempt_explanation] = attempt_explanation
       json_webhooks << webhook
     end
     respond_with(json_webhooks, status: :ok, location: webhooks_path)
